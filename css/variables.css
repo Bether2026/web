@@ -41,9 +41,9 @@
   --fs-tiny:   .72rem;
 
   /* Ritmo */
-  --sect-pad:  clamp(72px, 10vw, 130px);
-  --gutter:    clamp(20px, 4vw, 48px);
-  --maxw:      1160px;
+  --sect-pad:  clamp(72px, 10vw, 110px);
+  --gutter:    clamp(20px, 4vw, 64px);
+  --maxw:      1280px;
 
   /* Forma y movimiento */
   --r-card:    20px;
