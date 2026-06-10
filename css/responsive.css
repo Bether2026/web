@@ -165,3 +165,10 @@
   .fslider__emoji{ font-size:3rem }
   .fslider__title{ font-size:2.1rem }
 }
+
+/* ── Pantallas grandes (>1400px): aprovechar el espacio ──── */
+@media(min-width:1400px){
+  :root{ --maxw:1360px; --gutter:80px; }
+  .hero__inner{ max-width:1400px; }
+  .phone{ width:360px !important; }
+}
