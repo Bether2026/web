@@ -12,7 +12,7 @@ const MOBILE = innerWidth < 760;
 /* ── CANVAS ───────────────────────────────────────────────── */
 const CV = document.createElement('canvas');
 CV.id = 'bgParticles';
-CV.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;will-change:transform';
+CV.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;will-change:transform';
 document.body.prepend(CV);
 const X = CV.getContext('2d', {alpha:true});
 if(!X){ CV.remove(); return; }
@@ -34,7 +34,7 @@ function makeP(init){
     r: Math.random()*1.4+.4,
     c: GOLD[(Math.random()*GOLD.length)|0],
     a: 0,
-    maxA: MOBILE ? Math.random()*.32+.12 : Math.random()*.22+.06,
+    maxA: MOBILE ? Math.random()*.45+.18 : Math.random()*.22+.06,
     ph: Math.random()*Math.PI*2,
     sp: Math.random()*.008+.003,
     dx: (Math.random()-.5)*.09,
@@ -97,14 +97,14 @@ document.addEventListener('visibilitychange', ()=>{ visible = !document.hidden; 
   /* Ripples */
   for(let i=RIPPLES.length-1;i>=0;i--){
     const rp=RIPPLES[i];
-    rp.r += MOBILE ? 6 : 7;
+    rp.r += MOBILE ? 7 : 7;
     rp.a -= 0.016;
     if(rp.a<=0||rp.r>=rp.maxR){ RIPPLES.splice(i,1); continue; }
 
     /* Anillo principal */
     X.beginPath();
     X.arc(rp.x,rp.y,rp.r,0,Math.PI*2);
-    X.strokeStyle=`rgba(212,165,116,${rp.a*.8})`;
+    X.strokeStyle=`rgba(212,165,116,${rp.a})`;
     X.lineWidth = MOBILE ? 1.8 : 1.5;
     X.stroke();
 
