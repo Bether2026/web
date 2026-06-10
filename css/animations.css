@@ -81,12 +81,13 @@
 .bg-nebula{
   position:fixed;inset:-20%;z-index:0;pointer-events:none;
   background:
-    radial-gradient(38% 32% at 18% 22%, rgba(212,165,116,.10), transparent 70%),
-    radial-gradient(34% 30% at 82% 14%, rgba(168,85,247,.08),  transparent 70%),
-    radial-gradient(40% 36% at 70% 84%, rgba(255,93,122,.07),  transparent 70%),
-    radial-gradient(30% 28% at 22% 80%, rgba(34,211,238,.05),  transparent 70%);
+    radial-gradient(42% 38% at 8%  20%, rgba(212,165,116,.14), transparent 70%),
+    radial-gradient(38% 34% at 92% 12%, rgba(168,85,247,.11),  transparent 70%),
+    radial-gradient(44% 40% at 88% 86%, rgba(255,93,122,.10),  transparent 70%),
+    radial-gradient(36% 32% at 6%  82%, rgba(34,211,238,.08),  transparent 70%),
+    radial-gradient(28% 24% at 50% 50%, rgba(212,165,116,.05), transparent 70%);
   animation:nebulaDrift 36s ease-in-out infinite;
-  filter:blur(8px);
+  filter:blur(6px);
 }
 .bg-grid{
   position:fixed;inset:0;z-index:0;pointer-events:none;
