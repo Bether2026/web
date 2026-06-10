@@ -47,13 +47,13 @@ main{position:relative;z-index:1}
   position:relative;
   min-height:100svh;
   display:flex;align-items:center;
-  padding:130px var(--gutter) 70px;
+  padding:clamp(110px,12vw,150px) clamp(32px,5vw,80px) 70px;
 }
 .hero__inner{
-  max-width:var(--maxw);margin:0 auto;width:100%;
+  max-width:1320px;margin:0 auto;width:100%;
   display:grid;
-  grid-template-columns:1.12fr .88fr;
-  gap:60px;align-items:center;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(40px,6vw,80px);align-items:center;
 }
 .hero__eyebrow{
   display:inline-flex;align-items:center;gap:9px;
