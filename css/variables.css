@@ -1,0 +1,77 @@
+/* ═══════════════════════════════════════════════════════════
+   BETHER STUDIO · TOKENS
+   Identidad: noche profunda + dorado cálido.
+   Cambiar un color acá lo cambia en toda la web.
+═══════════════════════════════════════════════════════════ */
+:root{
+  /* Color */
+  --ink:        #0a0a0f;      /* fondo base */
+  --ink-2:      #101018;      /* paneles */
+  --ink-3:      #16161f;      /* tarjetas elevadas */
+  --gold:       #d4a574;
+  --gold-2:     #e6c08a;
+  --gold-3:     #f1d8a8;
+  --coral:      #ff5d7a;
+  --violet:     #a855f7;
+  --cyan:       #22d3ee;
+  --wa:         #25d366;
+
+  --txt:        rgba(255,255,255,.92);
+  --txt-2:      rgba(255,255,255,.62);
+  --txt-3:      rgba(255,255,255,.40);
+
+  --line:       rgba(255,255,255,.08);
+  --line-2:     rgba(255,255,255,.14);
+
+  /* Glass */
+  --glass-bg:     rgba(255,255,255,.04);
+  --glass-bg-hov: rgba(255,255,255,.07);
+  --glass-blur:   16px;
+
+  /* Tipografía */
+  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-body:    'Manrope', system-ui, sans-serif;
+
+  /* Escala */
+  --fs-hero:   clamp(2.6rem, 5.2vw, 4.6rem);
+  --fs-h2:     clamp(1.9rem, 3.6vw, 3rem);
+  --fs-h3:     1.25rem;
+  --fs-body:   1rem;
+  --fs-small:  .85rem;
+  --fs-tiny:   .72rem;
+
+  /* Ritmo */
+  --sect-pad:  clamp(72px, 10vw, 130px);
+  --gutter:    clamp(20px, 4vw, 48px);
+  --maxw:      1160px;
+
+  /* Forma y movimiento */
+  --r-card:    20px;
+  --r-btn:     999px;
+  --ease:      cubic-bezier(.22,1,.36,1);
+  --ease-pop:  cubic-bezier(.34,1.3,.64,1);
+
+  /* Sombras */
+  --sh-card:   0 10px 40px rgba(0,0,0,.45);
+  --sh-phone:  0 0 0 1.5px rgba(255,255,255,.12),
+               0 0 0 3px rgba(0,0,0,.9),
+               0 50px 100px rgba(0,0,0,.8);
+  --glow-gold: 0 0 50px rgba(212,165,116,.22);
+}
+
+/* Reset mínimo */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--txt);
+  font-family:var(--f-body);
+  font-size:var(--fs-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:rgba(212,165,116,.35)}

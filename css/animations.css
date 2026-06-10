@@ -1,0 +1,115 @@
+/* ═══════════════════════════════════════════════════════════
+   BETHER STUDIO · ANIMACIONES
+   Sistema de reveals al scroll + keyframes globales.
+   Nada aparece de golpe: fade, blur y slide (Fase 4).
+═══════════════════════════════════════════════════════════ */
+
+/* ── REVEALS AL SCROLL ──────────────────────────────────────
+   El JS agrega .in cuando el elemento entra en viewport.
+   Variantes:  .rv          → fade + slide up + blur
+               .rv[data-rv="left"]  → desde la izquierda
+               .rv[data-rv="right"] → desde la derecha
+               .rv[data-rv="zoom"]  → escala suave
+   Delays:     .d1 .d2 .d3 .d4 (stagger)                      */
+.rv{
+  opacity:0;
+  transform:translateY(34px);
+  filter:blur(8px);
+  transition:
+    opacity   .9s var(--ease),
+    transform .9s var(--ease),
+    filter    .9s var(--ease);
+  will-change:opacity,transform,filter;
+}
+.rv[data-rv="left"] { transform:translateX(-44px); }
+.rv[data-rv="right"]{ transform:translateX(44px); }
+.rv[data-rv="zoom"] { transform:scale(.92); }
+.rv.in{
+  opacity:1;
+  transform:none;
+  filter:blur(0);
+}
+.d1{transition-delay:.10s}
+.d2{transition-delay:.20s}
+.d3{transition-delay:.30s}
+.d4{transition-delay:.40s}
+
+/* ── KEYFRAMES ────────────────────────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(26px)}
+  to{opacity:1;transform:none}
+}
+@keyframes floatPhone{
+  0%,100%{transform:translateY(0) rotate(-.6deg)}
+  50%{transform:translateY(-14px) rotate(.6deg)}
+}
+@keyframes glowPulse{
+  0%,100%{opacity:.65;transform:translate(-50%,-50%) scale(1)}
+  50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}
+}
+@keyframes pulseRing{
+  0%{transform:scale(.8);opacity:1}
+  100%{transform:scale(1.7);opacity:0}
+}
+@keyframes shimmer{
+  0%{background-position:200% center}
+  100%{background-position:-200% center}
+}
+@keyframes nebulaDrift{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(4%, -3%) scale(1.06)}
+  66%{transform:translate(-3%, 4%) scale(.97)}
+}
+@keyframes gridSlide{
+  from{background-position:0 0}
+  to{background-position:0 60px}
+}
+@keyframes waPulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}
+  70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+@keyframes badgeFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+@keyframes spinSlow{
+  to{transform:rotate(360deg)}
+}
+
+/* ── FONDO: NEBULOSAS + GRID (movimiento lento) ───────────── */
+.bg-nebula{
+  position:fixed;inset:-20%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(38% 32% at 18% 22%, rgba(212,165,116,.10), transparent 70%),
+    radial-gradient(34% 30% at 82% 14%, rgba(168,85,247,.08),  transparent 70%),
+    radial-gradient(40% 36% at 70% 84%, rgba(255,93,122,.07),  transparent 70%),
+    radial-gradient(30% 28% at 22% 80%, rgba(34,211,238,.05),  transparent 70%);
+  animation:nebulaDrift 36s ease-in-out infinite;
+  filter:blur(8px);
+}
+.bg-grid{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(60% 55% at 50% 38%, #000 0%, transparent 100%);
+  -webkit-mask-image:radial-gradient(60% 55% at 50% 38%, #000 0%, transparent 100%);
+  animation:gridSlide 14s linear infinite;
+}
+/* El canvas de partículas lo inyecta js/animations.js con id bgParticles */
+#bgParticles{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+}
+
+/* ── REDUCED MOTION: todo quieto, todo visible ───────────── */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .rv{opacity:1;transform:none;filter:none}
+  .bg-nebula,.bg-grid{animation:none}
+}

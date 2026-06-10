@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Bether Studio</title>
+<meta name="description" content="Mirá las experiencias digitales que creamos para casamientos, quinceañeras, cumpleaños infantiles y más. Tocá una categoría y viví la demo en el teléfono.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="bg-nebula" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<nav class="nav" id="nav"></nav>
+
+<main>
+
+<!-- HERO PAGE -->
+<section class="page-hero">
+  <div class="section__inner">
+    <div class="sec-tag rv">Portfolio</div>
+    <h1 class="sec-title rv">Experiencias que ya <em>creamos</em></h1>
+    <p class="sec-sub rv">Cada invitación es artesanal y única. Tocá una categoría para verla en acción.</p>
+  </div>
+</section>
+
+<!-- SELECTOR + TELÉFONO GRANDE -->
+<section class="section" style="padding-top:0" id="portfolioSection">
+  <div class="section__inner">
+
+    <!-- Tabs de categorías -->
+    <div class="ptabs" id="ptabs" role="tablist"></div>
+
+    <!-- Layout: texto izquierda + teléfono derecha -->
+    <div class="portf-layout">
+      <div class="portf-info rv" id="portfInfo"></div>
+      <div class="portf-phone-col rv" data-rv="right" id="portfPhoneCol">
+        <!-- Teléfono grande con video/cover -->
+        <div class="portf-phone" id="portfPhone">
+          <div class="portf-phone__glow" id="portfGlow"></div>
+          <div class="portf-phone__frame">
+            <div class="portf-phone__notch">
+              <div class="phone__cam"></div><div class="phone__spk"></div>
+            </div>
+            <div class="portf-phone__screen" id="portfScreen">
+              <!-- Cover (inicial) -->
+              <div class="portf-phone__cover" id="portfCover">
+                <div class="portf-cover-emoji" id="portfEmoji"></div>
+                <div class="portf-cover-label" id="portfCoverLabel">Elegí una categoría arriba para ver la experiencia</div>
+                <div class="portf-cover-arrow">↑</div>
+              </div>
+              <!-- Video que se activa al elegir categoría -->
+              <video id="portfVideo" class="portf-phone__video" muted loop playsinline autoplay></video>
+              </div>
+            <div class="portf-phone__home"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA debajo -->
+    <div class="portf-cta-row rv">
+      <p>¿No encontrás la temática? <strong>Hacemos cualquier cosa.</strong></p>
+      <a href="#" class="btn btn--wa" data-wa data-wa-text="Hola Bether 👋 Vi el portfolio y quiero una invitación con una temática especial. ¿Se puede?">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
+        Consultá por WhatsApp
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section cta-final">
+  <div class="section__inner">
+    <div class="cta-final__inner rv">
+      <h2 class="sec-title">¿Listo para crear algo que <em>nadie va a olvidar?</em></h2>
+      <p class="sec-sub">Contanos la idea. En menos de 24 hs tenés una propuesta.</p>
+      <div class="cta-final__actions">
+        <a href="contacto.html" class="btn btn--gold">Empezar ahora</a>
+        <a href="precios.html" class="btn btn--ghost">Ver precios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer" class="footer"></footer>
+
+<!-- MODAL EFECTO APP -->
+<div class="appmodal" id="appModal" role="dialog" aria-modal="true" aria-label="Demo de invitación">
+  <button class="appmodal__close" id="appModalClose" aria-label="Cerrar">✕</button>
+  <div class="appmodal__phone" id="appModalPhone">
+    <div class="appmodal__notch"><div class="phone__cam"></div><div class="phone__spk"></div></div>
+    <div class="appmodal__screen" id="appModalScreen">
+      <div class="appmodal__loader" id="appModalLoader"></div>
+      <iframe id="appModalFrame" src="about:blank" title="Demo" allow="autoplay;fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="appmodal__home"></div>
+  </div>
+  <div class="appmodal__label" id="appModalLabel">Navegá la invitación como un invitado</div>
+</div>
+
+<a href="#" class="fab-wa" id="fabWa" aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
+</a>
+
+<script src="js/content.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/portfolio.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bether Studio — Invitaciones digitales interactivas | Buenos Aires</title>
+<meta name="description" content="Invitaciones digitales que sorprenden desde el primer segundo: link personalizado por invitado, mini-juego, música con IA y panel de confirmaciones en tiempo real. Pedí tu presupuesto.">
+<link rel="canonical" href="https://bether2026.github.io/Prueba2web/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bether Studio — Invitaciones digitales interactivas">
+<meta property="og:description" content="Cada invitado recibe su propio link. Animaciones, música con IA, mini-juego y confirmación en tiempo real.">
+<meta property="og:image" content="assets/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Bether Studio","description":"Invitaciones digitales interactivas para eventos.","areaServed":"Buenos Aires, Argentina","email":"hola@betherstudio.com.ar","sameAs":["https://instagram.com/betherstudio"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="bg-nebula" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<nav class="nav" id="nav"></nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <div class="hero__eyebrow"><span class="hero__dot"></span><span id="heroEyebrow"></span></div>
+      <h1 class="hero__title" id="heroTitle"></h1>
+      <p class="hero__sub" id="heroSub"></p>
+      <div class="hero__pills" id="heroPills"></div>
+      <div class="hero__actions" id="heroActions"></div>
+      <div class="stats-row" id="statsRow"></div>
+    </div>
+    <div class="hero__phone-col" id="heroPhoneMount"></div>
+  </div>
+  <div class="hero__scroll"><span>Explorá</span><div class="hero__scroll-line"></div></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap" aria-hidden="true"><div class="mq-track" id="mqTrack"></div></div>
+
+<!-- PROOF BAR -->
+<div class="proof-bar rv" id="proofBar"></div>
+
+<!-- PROCESO (3 pasos) -->
+<section class="section" id="proceso">
+  <div class="section__inner">
+    <header class="sec-header sec-header--center rv">
+      <div class="sec-tag">Cómo trabajamos</div>
+      <h2 class="sec-title">De tu idea a la experiencia, <em>en 3 pasos</em></h2>
+      <p class="sec-sub">Sin vueltas, sin sorpresas. Sabés exactamente qué pasa antes de abonar.</p>
+    </header>
+    <div class="proceso__grid" id="procesoGrid"></div>
+  </div>
+</section>
+
+<!-- FEATURES SLIDER — full width, fuera del max-width -->
+<section class="section features-section" style="padding-top:0">
+  <div class="section__inner">
+    <header class="sec-header sec-header--center rv">
+      <div class="sec-tag">Todo lo que incluye</div>
+      <h2 class="sec-title">Una experiencia completa que <strong>ninguna invitación común tiene</strong></h2>
+    </header>
+  </div>
+  </div><!-- /section__inner -->
+  <!-- El slider va FUERA del section__inner: sin max-width ni overflow heredado -->
+  <div id="bentoGrid"></div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section cta-final">
+  <div class="section__inner">
+    <div class="cta-final__inner rv">
+      <h2 class="sec-title">¿Listo para crear algo que <em>nadie va a olvidar?</em></h2>
+      <p class="sec-sub">Contanos la idea. En menos de 24 hs tenés una propuesta.</p>
+      <div class="cta-final__actions">
+        <a href="contacto.html" class="btn btn--gold">Empezar ahora</a>
+        <a href="portfolio.html" class="btn btn--ghost">Ver portfolio</a>
+        <a href="precios.html" class="btn btn--ghost">Ver precios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer" class="footer"></footer>
+
+<!-- MODAL EFECTO APP -->
+<div class="appmodal" id="appModal" role="dialog" aria-modal="true" aria-label="Demo de invitación">
+  <button class="appmodal__close" id="appModalClose" aria-label="Cerrar">✕</button>
+  <div class="appmodal__phone" id="appModalPhone">
+    <div class="appmodal__notch"><div class="phone__cam"></div><div class="phone__spk"></div></div>
+    <div class="appmodal__screen" id="appModalScreen">
+      <div class="appmodal__loader" id="appModalLoader"></div>
+      <iframe id="appModalFrame" src="about:blank" title="Demo" allow="autoplay;fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="appmodal__home"></div>
+  </div>
+  <div class="appmodal__label" id="appModalLabel">Navegá la invitación como un invitado</div>
+</div>
+
+<!-- FAB WHATSAPP -->
+<a href="#" class="fab-wa" id="fabWa" aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
+</a>
+
+<script src="js/content.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
