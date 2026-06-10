@@ -106,7 +106,7 @@
    .phone > .phone__glow + .phone__frame > notch/screen/home
    La screen lleva una .phone__cover (portada) y opcionalmente
    un iframe que se activa en el modal.                       */
-.phone{position:relative;width:260px}
+.phone{position:relative;width:clamp(240px,28vw,340px)}
 .phone__glow{
   position:absolute;top:52%;left:50%;
   transform:translate(-50%,-50%);
@@ -199,8 +199,8 @@
   box-shadow:0 8px 32px rgba(0,0,0,.4);
   animation:badgeFloat 4s ease-in-out infinite;
 }
-.phone__badge--1{left:-44px;top:20%;border-color:rgba(74,222,128,.25)}
-.phone__badge--2{right:-48px;bottom:26%;border-color:rgba(212,165,116,.25);animation-delay:-2s}
+.phone__badge--1{left:clamp(-28px,-4vw,-44px);top:20%;border-color:rgba(74,222,128,.25)}
+.phone__badge--2{right:clamp(-28px,-4vw,-48px);bottom:26%;border-color:rgba(212,165,116,.25);animation-delay:-2s}
 .phone__badge b{display:block;font-size:11px;color:#fff}
 .phone__badge span{font-size:9.5px;color:var(--txt-3);white-space:nowrap}
 .phone__badge .ic{font-size:1.15rem}
