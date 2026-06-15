@@ -624,3 +624,49 @@ main{position:relative;z-index:1}
 }
 .fslider__dot.active{ background:var(--gold-2);width:26px;border-radius:99px; }
 .fslider__dot:hover:not(.active){ background:rgba(255,255,255,.5); }
+
+/* ══ PRECIOS — SELECTOR + GARANTÍA + TESTIMONIO ════════════ */
+
+/* Filtros de tipo de evento */
+.plan-filtros{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-bottom:clamp(28px,4vw,44px);
+}
+.plan-filtro{
+  padding:11px 22px;border-radius:99px;
+  font-size:var(--fs-small);font-weight:700;
+  border:1px solid var(--line-2);background:var(--glass-bg);
+  color:var(--txt-2);
+  transition:background .25s,border-color .25s,color .25s,transform .2s var(--ease-pop);
+}
+.plan-filtro:hover{ background:var(--glass-bg-hov);border-color:rgba(212,165,116,.35);color:var(--txt); }
+.plan-filtro--active{
+  background:linear-gradient(135deg,var(--gold),var(--gold-2));
+  color:var(--ink);border-color:transparent;
+  box-shadow:0 6px 20px rgba(212,165,116,.28);
+}
+.plan-filtro--active:hover{ transform:scale(1.04); }
+
+/* Garantía dentro de cada plan-card */
+.plan-card__garantia{
+  font-size:var(--fs-tiny);
+  color:rgba(74,222,128,.85);
+  background:rgba(74,222,128,.07);
+  border:1px solid rgba(74,222,128,.2);
+  border-radius:10px;
+  padding:9px 14px;
+  line-height:1.4;
+  margin-top:auto;
+}
+
+/* Testimonio en el hero de precios */
+.precios-testimonio{
+  margin-top:20px;
+  font-size:var(--fs-small);
+  color:var(--txt-2);
+  font-style:italic;
+}
+.precios-testimonio em{
+  color:var(--gold-2);
+  font-style:italic;
+}
