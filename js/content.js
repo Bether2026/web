@@ -102,8 +102,29 @@ const CONTENT = {
 
   /* PRECIOS */
   planes: [
-    { id:"basico",   nombre:"Básico",   precio:"Desde $15.000", highlight:false,
+    { id:"esencial", nombre:"Esencial", precio:"Desde $10.000", highlight:false,
+      badge:"🎈 Ideal para infantiles",
+      subtitulo:"Lo justo para una invitación que sorprende",
+      categorias:["infantil"],
+      garantia:"🛡 Demo gratis — si no te convence, no pagás nada",
+      features:[
+        "Diseño con temática personalizada",
+        "Countdown en tiempo real",
+        "Confirmación de asistencia por WhatsApp",
+        "Mapas integrados (Google, Waze, Apple)",
+        "Agregar al calendario",
+        "Música de fondo temática",
+        "CBU / alias para regalos",
+        "Link para compartir por WhatsApp",
+        "1 revisión incluida",
+        "Link activo por 2 meses"
+      ],
+      cta:"Consultar precio"
+    },
+    { id:"basico", nombre:"Básico", precio:"Desde $20.000", highlight:false,
       subtitulo:"Lo esencial bien hecho",
+      categorias:["infantil","otro"],
+      garantia:"🛡 Demo gratis — si no te convence, no pagás nada",
       features:[
         "Diseño con temática personalizada","Countdown en tiempo real",
         "Confirmación de asistencia con GIF","Mapas integrados (Google, Waze, Apple)",
@@ -113,9 +134,11 @@ const CONTENT = {
       ],
       cta:"Consultar precio"
     },
-    { id:"premium",  nombre:"Premium",  precio:"Desde $25.000", highlight:true,
+    { id:"premium", nombre:"Premium", precio:"Desde $35.000", highlight:true,
       badge:"★ Más elegido",
       subtitulo:"El sweet spot — la mayoría elige este",
+      categorias:["infantil","casamiento","quinceanera","otro"],
+      garantia:"🛡 Demo gratis — si no te convence, no pagás nada",
       features:[
         "Todo lo del plan Básico","Efectos visuales avanzados",
         "Fotos y video del festejado","Música personalizada con IA",
@@ -125,8 +148,10 @@ const CONTENT = {
       ],
       cta:"Consultar precio"
     },
-    { id:"elite",    nombre:"Elite",    precio:"Desde $50.000", highlight:false,
+    { id:"elite", nombre:"Elite", precio:"Desde $70.000", highlight:false,
       subtitulo:"Para eventos que tienen que quedar marcados",
+      categorias:["casamiento","quinceanera","otro"],
+      garantia:"🛡 Demo gratis — si no te convence, no pagás nada",
       features:[
         "Todo lo del plan Premium","Link personalizado para cada invitado",
         "Armado de mesa inteligente","Listado de invitados para el salón",
@@ -140,19 +165,19 @@ const CONTENT = {
 
   comparacion: {
     filas:[
-      { label:"Diseño con temática personalizada",  basico:true,  premium:true,  elite:true  },
-      { label:"Countdown en tiempo real",            basico:true,  premium:true,  elite:true  },
-      { label:"Confirmación con GIF",                basico:true,  premium:true,  elite:true  },
-      { label:"Mapas integrados",                    basico:true,  premium:true,  elite:true  },
-      { label:"Mini-juego o trivia interactiva",     basico:true,  premium:true,  elite:true  },
-      { label:"Video personalizado con IA",          basico:false, premium:true,  elite:true  },
-      { label:"Música personalizada con IA",         basico:false, premium:true,  elite:true  },
-      { label:"Panel de control de confirmados",     basico:false, premium:true,  elite:true  },
-      { label:"Link personalizado por invitado",     basico:false, premium:false, elite:true  },
-      { label:"Armado de mesa inteligente",          basico:false, premium:false, elite:true  },
-      { label:"Revisiones incluidas",                basico:"1",   premium:"3",   elite:"Hasta 6" },
-      { label:"Vigencia del link",                   basico:"3 meses", premium:"6 meses", elite:"12 meses" },
-      { label:"Soporte WhatsApp",                    basico:"Normal", premium:"Prioritario", elite:"+ 30 días post" }
+      { label:"Diseño con temática personalizada",  esencial:true,  basico:true,  premium:true,  elite:true  },
+      { label:"Countdown en tiempo real",            esencial:true,  basico:true,  premium:true,  elite:true  },
+      { label:"Confirmación de asistencia",          esencial:"WhatsApp", basico:"Con GIF", premium:"Con GIF", elite:"Con GIF" },
+      { label:"Mapas integrados",                    esencial:true,  basico:true,  premium:true,  elite:true  },
+      { label:"Mini-juego o trivia interactiva",     esencial:false, basico:true,  premium:true,  elite:true  },
+      { label:"Video personalizado con IA",          esencial:false, basico:false, premium:true,  elite:true  },
+      { label:"Música personalizada con IA",         esencial:false, basico:false, premium:true,  elite:true  },
+      { label:"Panel de control de confirmados",     esencial:false, basico:false, premium:true,  elite:true  },
+      { label:"Link personalizado por invitado",     esencial:false, basico:false, premium:false, elite:true  },
+      { label:"Armado de mesa inteligente",          esencial:false, basico:false, premium:false, elite:true  },
+      { label:"Revisiones incluidas",                esencial:"1",  basico:"1",  premium:"3",  elite:"Hasta 6" },
+      { label:"Vigencia del link",                   esencial:"2 meses", basico:"3 meses", premium:"6 meses", elite:"12 meses" },
+      { label:"Soporte WhatsApp",                    esencial:"Normal", basico:"Normal", premium:"Prioritario", elite:"+ 30 días post" }
     ]
   },
 
@@ -179,7 +204,7 @@ const CONTENT = {
     titulo:   "¿Listo para crear la experiencia?",
     sub:      "Contanos tu idea. En menos de 24 hs tenés una propuesta. Sin compromiso.",
     tiposEvento:["Cumpleaños infantil","Casamiento","Quinceañera","Bautismo","Graduación","Otro"],
-    planes:   ["No sé todavía","Básico","Premium","Elite","A medida"],
+    planes:   ["No sé todavía","Esencial","Básico","Premium","Elite","A medida"],
     fuentes:  ["Instagram","Recomendación","Google","WhatsApp","Otro"]
   }
 };
