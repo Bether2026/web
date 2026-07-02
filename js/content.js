@@ -8,8 +8,6 @@ const CONTENT = {
     nombre:    "Bether Studio",
     tagline:   "Invitaciones digitales interactivas que convierten un link en algo que nadie olvida.",
     whatsapp:  "5491145309135",
-    instagram: "betherstudio",
-    email:     "hola@betherstudio.com.ar",
     ciudad:    "Buenos Aires, Argentina",
     mensajeWA: "Hola Bether 👋 Quiero pedir presupuesto para una invitación digital."
   },
