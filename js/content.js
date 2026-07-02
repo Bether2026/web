@@ -83,7 +83,7 @@ const CONTENT = {
   /* PORTFOLIO — categorías para el selector interactivo */
   categorias: [
     { id:"infantil",   label:"Infantil",    video:"https://r2.betherstudio.com/previews/infantil.mp4",
-      demo:"https://bether2026.github.io/MarioBross/",
+      demo:"https://bob-esponja-delta.vercel.app/",
       coverEmoji:"🎮", coverBg:"linear-gradient(160deg,#0d1f35,#1a4a7a 45%,#d63a2f 75%,#3a8a2a)",
       titulo:"Experiencias infantiles", desc:"Mario Bros, Frozen, Spiderman, Dinosaurios, Minecraft y la que se te ocurra." },
     { id:"casamiento", label:"Casamiento",  video:"https://r2.betherstudio.com/previews/casamiento.mp4",
@@ -95,7 +95,7 @@ const CONTENT = {
       coverEmoji:"👑", coverBg:"linear-gradient(160deg,#1a0b2e,#5b21b6 55%,#d4a574)",
       titulo:"Quinceañeras únicas",     desc:"La noche más especial merece la invitación más especial." },
     { id:"adulto",     label:"Adulto",      video:"",
-      demo:"https://bether2026.github.io/Cumplebet/",
+      demo:"https://cumplebet41.vercel.app/",
       coverEmoji:"🥂", coverBg:"linear-gradient(160deg,#0f0a14,#6d28d9 50%,#d4a574)",
       titulo:"Cumpleaños de adultos",   desc:"Elegante, divertido y a tu medida. La fiesta empieza desde el link." },
     { id:"medida",     label:"A medida",    video:"https://r2.betherstudio.com/previews/medida.mp4",
