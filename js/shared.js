@@ -94,8 +94,6 @@ if(footerEl){
       <div class="footer__col">
         <div class="footer__col-title">Contacto</div>
         <a href="${waLink()}" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="mailto:${C.negocio.email}">Email</a>
-        <a href="https://instagram.com/${C.negocio.instagram}" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="footer__bottom">
