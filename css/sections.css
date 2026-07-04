@@ -670,3 +670,84 @@ main{position:relative;z-index:1}
   color:var(--gold-2);
   font-style:italic;
 }
+
+/* ══ PRECIOS — SECCIÓN DESDE ═══════════════════════════════ */
+.precio-hero{
+  text-align:center;
+  padding:clamp(48px,8vw,80px) 0 clamp(32px,5vw,52px);
+}
+.precio-hero__desde{
+  font-size:var(--fs-small);font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--txt-3);margin-bottom:12px;
+}
+.precio-hero__num{
+  font-family:var(--f-display);
+  font-size:clamp(4rem,12vw,9rem);
+  font-weight:300;line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(135deg,var(--gold-3),var(--gold),var(--gold-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:14px;
+}
+.precio-hero__sub{
+  font-size:1.05rem;color:var(--txt-2);
+}
+
+/* Garantía */
+.precio-garantia{
+  display:flex;align-items:center;gap:18px;
+  max-width:640px;margin:0 auto clamp(36px,5vw,56px);
+  background:rgba(74,222,128,.06);
+  border:1px solid rgba(74,222,128,.2);
+  border-radius:18px;padding:20px 24px;
+}
+.precio-garantia__icon{font-size:2rem;flex:none;}
+.precio-garantia strong{display:block;font-size:1rem;color:rgba(74,222,128,.9);margin-bottom:4px;}
+.precio-garantia span{font-size:var(--fs-small);color:var(--txt-2);}
+
+/* Features resumen (pills) */
+.precio-features{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  margin-bottom:clamp(36px,5vw,52px);
+}
+.precio-feat{
+  font-size:var(--fs-small);font-weight:600;
+  padding:9px 18px;border-radius:99px;
+  border:1px solid var(--line-2);background:var(--glass-bg);
+  color:var(--txt-2);
+}
+
+/* CTAs */
+.precio-cta{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.btn--lg{ padding:18px 36px;font-size:1.05rem; }
+
+/* Nota */
+.precio-nota{
+  text-align:center;font-size:var(--fs-small);color:var(--txt-3);
+  max-width:520px;margin:0 auto;line-height:1.6;
+}
+
+/* Includes grid */
+.precio-includes{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:16px;max-width:860px;margin:0 auto;
+}
+.include-card{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:20px 22px;border-radius:16px;
+  border:1px solid var(--line);background:var(--glass-bg);
+  backdrop-filter:blur(var(--glass-blur));
+  transition:border-color .3s,transform .3s var(--ease);
+}
+.include-card:hover{border-color:rgba(212,165,116,.3);transform:translateY(-3px);}
+.include-card__emoji{font-size:1.6rem;flex:none;line-height:1;margin-top:2px;}
+.include-card__title{font-weight:700;font-size:.95rem;margin-bottom:4px;}
+.include-card__desc{font-size:var(--fs-small);color:var(--txt-2);line-height:1.5;}
+
+@media(max-width:640px){
+  .precio-includes{grid-template-columns:1fr;}
+  .precio-cta{flex-direction:column;align-items:stretch;}
+  .precio-cta .btn{text-align:center;}
+}
