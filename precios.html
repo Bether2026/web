@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precios — Bether Studio</title>
-<meta name="description" content="Planes de invitaciones digitales desde $15.000. Básico, Premium y Elite. Sin letra chica. Ves el demo antes de abonar.">
+<meta name="description" content="Invitaciones digitales desde $15.000. Demo gratis antes de abonar. Si no te convence, no pagás nada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -22,48 +22,73 @@
 
 <main>
 
+<!-- HERO PRECIOS -->
 <section class="page-hero">
   <div class="section__inner">
     <div class="sec-tag rv">Precios</div>
-    <h1 class="sec-title rv">Elegí tu <em>experiencia</em></h1>
-    <p class="sec-sub rv">Cada plan incluye todo lo que necesitás para sorprender. Sin letra chica.</p>
+    <h1 class="sec-title rv">Simple, <em>transparente</em> y sin sorpresas</h1>
+    <p class="sec-sub rv">Primero te mostramos el demo funcionando en tu celular. Recién si te convence, elegís y abonás.</p>
     <div class="precios-testimonio rv" id="preciosTestimonio"></div>
   </div>
 </section>
 
-<!-- PLANES -->
+<!-- PRECIO DESDE -->
 <section class="section" style="padding-top:0">
   <div class="section__inner">
-    <div class="plan-filtros rv" id="planFiltros"></div>
-    <div class="planes-grid" id="planesGrid"></div>
 
-    <!-- A medida -->
-    <div class="amedida-card rv" id="amedidaCard">
-      <div class="amedida-card__body">
-        <div class="amedida-card__title">¿Algo diferente?</div>
-        <p>Tenés una idea que no entra en ningún plan, un evento especial, o querés algo único. <strong>Contanos tu idea y lo cotizamos en menos de 24 hs.</strong> Sin compromiso.</p>
-        <div class="amedida-card__tags" id="amedidaTags"></div>
-      </div>
-      <a href="contacto.html" class="btn btn--gold">Contanos tu idea →</a>
+    <!-- Número grande -->
+    <div class="precio-hero rv">
+      <div class="precio-hero__desde">Desde</div>
+      <div class="precio-hero__num">$15.000</div>
+      <div class="precio-hero__sub">por invitación digital completa</div>
     </div>
+
+    <!-- Garantía destacada -->
+    <div class="precio-garantia rv">
+      <span class="precio-garantia__icon">🛡</span>
+      <div>
+        <strong>Demo gratis antes de abonar</strong>
+        <span>Creamos tu invitación de prueba sin cargo. Si no te convence, no pagás nada.</span>
+      </div>
+    </div>
+
+    <!-- Features incluidas -->
+    <div class="precio-features rv" id="precioFeatures"></div>
+
+    <!-- CTA -->
+    <div class="precio-cta rv">
+      <a href="#" class="btn btn--wa btn--lg" data-wa data-wa-text="Hola Bether 👋 Quiero pedir presupuesto para una invitación digital.">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
+        Pedir presupuesto por WhatsApp
+      </a>
+      <a href="portfolio.html" class="btn btn--ghost btn--lg">Ver ejemplos primero</a>
+    </div>
+
+    <!-- Nota de precio -->
+    <p class="precio-nota rv">El precio final depende de la complejidad, temática y funcionalidades del evento. Te cotizamos sin compromiso en menos de 24 hs.</p>
+
   </div>
 </section>
 
-<!-- COMPARACIÓN -->
+<!-- QUÉ INCLUYE -->
 <section class="section" style="padding-top:0">
   <div class="section__inner">
     <header class="sec-header sec-header--center rv">
-      <div class="sec-tag">Comparación</div>
-      <h2 class="sec-title">¿Qué incluye <em>cada plan?</em></h2>
+      <div class="sec-tag">Incluido en toda invitación</div>
+      <h2 class="sec-title">Todo lo que necesitás, <em>sin extras ocultos</em></h2>
     </header>
-    <div class="tabla-wrap rv"><table class="tabla-comp" id="tablaComp"></table></div>
+    <div class="precio-includes rv" id="precioIncludes"></div>
   </div>
 </section>
 
-<!-- PROCESO mini -->
+<!-- PROCESO -->
 <section class="section" style="padding-top:0">
   <div class="section__inner">
-    <div class="proceso-mini rv" id="procesoMini"></div>
+    <header class="sec-header sec-header--center rv">
+      <div class="sec-tag">Cómo funciona</div>
+      <h2 class="sec-title">De tu idea al link, <em>sin complicaciones</em></h2>
+    </header>
+    <div class="proceso__grid" id="procesoGrid"></div>
   </div>
 </section>
 
