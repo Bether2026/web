@@ -114,3 +114,83 @@
   .rv{opacity:1;transform:none;filter:none}
   .bg-nebula,.bg-grid{animation:none}
 }
+
+/* ══ TRANSICIÓN ENTRE PÁGINAS ═══════════════════════════════
+   Cortina que baja al salir y sube al entrar               */
+.page-transition{
+  position:fixed;inset:0;z-index:99998;
+  background:linear-gradient(160deg,#0a0a0f 0%,#16101a 50%,#0a0f12 100%);
+  transform:translateY(100%);
+  pointer-events:none;
+  will-change:transform;
+}
+.page-transition.exit{
+  animation:ptExit .55s var(--ease) forwards;
+}
+.page-transition.enter{
+  transform:translateY(0%);
+  animation:ptEnter .55s var(--ease) forwards;
+}
+@keyframes ptExit{
+  from{transform:translateY(100%)}
+  to{transform:translateY(0%)}
+}
+@keyframes ptEnter{
+  from{transform:translateY(0%)}
+  to{transform:translateY(-100%)}
+}
+
+/* Logo centrado en la cortina */
+.page-transition__logo{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--f-display,Georgia,serif);
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:300;letter-spacing:.2em;text-transform:uppercase;
+  background:linear-gradient(135deg,#e6c08a,#d4a574,#c8935a);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:0;
+  animation:ptLogo .35s .15s ease forwards;
+}
+@keyframes ptLogo{
+  from{opacity:0;transform:translate(-50%,-50%) scale(.9)}
+  to{opacity:1;transform:translate(-50%,-50%) scale(1)}
+}
+
+/* ══ TEXTO TYPEWRITER ════════════════════════════════════════
+   .tw — el elemento destella mientras escribe              */
+.tw-cursor::after{
+  content:"|";
+  animation:twBlink .7s step-end infinite;
+  color:#d4a574;margin-left:2px;
+}
+@keyframes twBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ══ ELEMENTOS FLOTANTES ═════════════════════════════════════
+   Badges, pills y elementos decorativos con float random   */
+@keyframes floatA{
+  0%,100%{transform:translateY(0) rotate(-2deg)}
+  50%{transform:translateY(-16px) rotate(2deg)}
+}
+@keyframes floatB{
+  0%,100%{transform:translateY(-8px) rotate(1deg)}
+  50%{transform:translateY(6px) rotate(-3deg)}
+}
+@keyframes floatC{
+  0%,100%{transform:translateY(4px) rotate(0deg)}
+  50%{transform:translateY(-12px) rotate(-1deg)}
+}
+.float-a{animation:floatA 5.5s ease-in-out infinite}
+.float-b{animation:floatB 6.5s ease-in-out infinite}
+.float-c{animation:floatC 4.8s ease-in-out infinite}
+
+/* ══ LETRAS UNA A UNA (hero titles) ═════════════════════════ */
+.split-word{display:inline-block;overflow:hidden;}
+.split-char{
+  display:inline-block;
+  animation:charIn .6s var(--ease) both;
+}
+@keyframes charIn{
+  from{opacity:0;transform:translateY(110%)}
+  to{opacity:1;transform:translateY(0)}
+}
