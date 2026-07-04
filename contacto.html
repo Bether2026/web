@@ -1,58 +1,67 @@
-(function(){
-'use strict';
-const C=window.CONTENT,B=window.BETHER; if(!C||!B) return;
-const ct=C.contacto;
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Bether Studio</title>
+<meta name="description" content="Contactá a Bether Studio por WhatsApp, email o Instagram. Te respondemos en menos de 24 hs con una propuesta personalizada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="bg-nebula" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
 
-/* Canales */
-const cd=document.getElementById('contactoDirectos');
-if(cd) cd.innerHTML=[
-  {ic:'💬',label:'WhatsApp',sub:'Respondemos en menos de 24 hs →',href:B.waLink()}
-].map(d=>`<a class="card contacto-directo" href="${d.href}" target="_blank" rel="noopener">
-  <span class="contacto-directo__ic">${d.ic}</span>
-  <div><b>${d.label}</b><span>${d.sub}</span></div>
-  <span class="contacto-directo__arrow">→</span>
-</a>`).join('');
+<nav class="nav" id="nav"></nav>
 
-/* Formulario extendido */
-const cf=document.getElementById('contactForm');
-if(cf){
-  const sel=(id,opts,req='')=>`<select id="${id}"${req}><option value="">Elegir...</option>${opts.map(o=>`<option>${o}</option>`).join('')}</select>`;
-  cf.innerHTML=`
-    <div class="form__row">
-      <div><label for="fNombre">Tu nombre *</label><input id="fNombre" type="text" placeholder="Ej: Romina" autocomplete="name" required></div>
-      <div><label for="fContacto">WhatsApp / Email *</label><input id="fContacto" type="text" placeholder="Tu WA o mail" required></div>
-    </div>
-    <div class="form__row">
-      <div><label for="fTipo">Tipo de evento *</label>${sel('fTipo',ct.tiposEvento,' required')}</div>
-      <div><label for="fTematica">Temática</label><input id="fTematica" type="text" placeholder="Ej: Mario Bros, Frozen…"></div>
-    </div>
-    <div class="form__row">
-      <div><label for="fFecha">Fecha del evento</label><input id="fFecha" type="text" placeholder="Ej: 15 de agosto"></div>
-      <div><label for="fPlan">Plan de interés</label>${sel('fPlan',ct.planes)}</div>
-    </div>
-    <div><label for="fMsg">Contáme más</label><textarea id="fMsg" placeholder="Cantidad de invitados, ideas, lo que imaginás…"></textarea></div>
-    <div><label for="fFuente">¿Cómo nos conociste?</label>${sel('fFuente',ct.fuentes)}</div>
-    <button class="btn btn--wa" id="formSend" type="button">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
-      Enviar consulta
-    </button>
-    <p class="form__note">Respuesta en menos de 24 horas · Sin compromiso · Datos protegidos</p>`;
+<main>
 
-  document.getElementById('formSend').addEventListener('click',function(){
-    const v=id=>(document.getElementById(id)||{}).value||'';
-    const nombre=v('fNombre').trim(), contacto=v('fContacto').trim();
-    if(!nombre||!contacto){ alert('Completá tu nombre y contacto para continuar.'); return; }
-    let txt='Hola Bether 👋 Quiero pedir presupuesto.\n';
-    txt+='• Nombre: '+nombre+'\n';
-    txt+='• Contacto: '+contacto+'\n';
-    if(v('fTipo'))    txt+='• Evento: '+v('fTipo')+'\n';
-    if(v('fTematica'))txt+='• Temática: '+v('fTematica')+'\n';
-    if(v('fFecha'))   txt+='• Fecha: '+v('fFecha')+'\n';
-    if(v('fPlan')&&v('fPlan')!=='Elegir...') txt+='• Plan: '+v('fPlan')+'\n';
-    if(v('fMsg'))     txt+='• Info extra: '+v('fMsg')+'\n';
-    if(v('fFuente')&&v('fFuente')!=='Elegir...') txt+='• Cómo nos conoció: '+v('fFuente');
-    open(B.waLink(txt),'_blank','noopener');
-  });
-}
-if(window.BETHER.initReveals) window.BETHER.initReveals();
-})();
+<section class="page-hero">
+  <div class="section__inner">
+    <div class="sec-tag rv">Contacto</div>
+    <h1 class="sec-title rv">¿Listo para crear la <em>experiencia?</em></h1>
+    <p class="sec-sub rv">Contanos tu idea. En menos de 24 hs tenés una propuesta. Sin compromiso.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="section__inner">
+    <div class="contacto-layout">
+
+      <!-- Canales directos -->
+      <div class="rv" data-rv="left">
+        <div class="contacto-directos" id="contactoDirectos"></div>
+        <div class="contacto-nota rv">
+          <span class="contacto-nota__dot"></span>
+          Respondemos en menos de 24 hs
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="card contacto-form-card rv" data-rv="right">
+        <div class="contacto-form-title">Contanos la idea</div>
+        <p class="contacto-form-sub">Cuanto más nos cuentes, mejor la propuesta. Pero no es obligatorio llenar todo.</p>
+        <div class="form" id="contactForm"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer" class="footer"></footer>
+<a href="#" class="fab-wa" id="fabWa" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg></a>
+
+<script src="js/content.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/contacto.js"></script>
+</body>
+</html>
