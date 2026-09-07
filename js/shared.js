@@ -185,3 +185,40 @@ initReveals();
 window.BETHER.initReveals=initReveals;
 
 })();
+
+/* ══ GATE DE ENTRADA ════════════════════════════════════════ */
+(function(){
+  const gate = document.getElementById('gate');
+  if(!gate) return;
+
+  function closeGate(mode){
+    // Guardamos la elección
+    try{ sessionStorage.setItem('bether_gate', mode); }catch(e){}
+
+    gate.classList.add('out');
+    setTimeout(()=>{ gate.style.display='none'; }, 750);
+
+    if(mode === 'salon'){
+      // Redirige al showcase de salones
+      window.open('https://bether2026.github.io/bether/', '_blank');
+    }
+    // Para 'particular' simplemente muestra la página normal
+  }
+
+  // Si ya eligió en esta sesión, no mostramos el gate
+  try{
+    const saved = sessionStorage.getItem('bether_gate');
+    if(saved){
+      gate.style.display='none';
+      return;
+    }
+  }catch(e){}
+
+  document.getElementById('gateParticular').addEventListener('click', function(){
+    closeGate('particular');
+  });
+
+  document.getElementById('gateSalon').addEventListener('click', function(){
+    closeGate('salon');
+  });
+})();
