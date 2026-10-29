@@ -4,119 +4,264 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bether Studio — Invitaciones digitales interactivas | Buenos Aires</title>
-<meta name="description" content="Invitaciones digitales que sorprenden desde el primer segundo: link personalizado por invitado, mini-juego, música con IA y panel de confirmaciones en tiempo real. Pedí tu presupuesto.">
+<meta name="description" content="Invitaciones digitales que se viven: link con el nombre de cada invitado, sobre animado, música, mini-juego y confirmación en tiempo real. Demo gratis.">
 <link rel="canonical" href="https://bether-studio.com/invitaciones.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bether Studio — Invitaciones digitales interactivas">
-<meta property="og:description" content="Cada invitado recibe su propio link. Animaciones, música con IA, mini-juego y confirmación en tiempo real.">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Bether Studio","description":"Invitaciones digitales interactivas para eventos.","areaServed":"Buenos Aires, Argentina"}</script>
+<meta property="og:title" content="Bether Studio — Invitaciones digitales interactivas | Buenos Aires">
+<meta property="og:description" content="Invitaciones digitales que se viven: link con el nombre de cada invitado, sobre animado, música, mini-juego y confirmación en tiempo real. Demo gratis.">
+<meta property="og:image" content="https://bether-studio.com/img/inv/casamiento.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/animations.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/sections.css">
-<link rel="stylesheet" href="css/responsive.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/webs.css?v=4">
+<link rel="stylesheet" href="css/inv.css?v=1">
+<script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
-<div class="bg-nebula" aria-hidden="true"></div>
-<div class="bg-grid" aria-hidden="true"></div>
-
-<nav class="nav" id="nav"></nav>
-
-<main>
-
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <div class="hero__inner">
-    <div class="hero__copy">
-      <div class="hero__eyebrow"><span class="hero__dot"></span><span id="heroEyebrow"></span></div>
-      <h1 class="hero__title" id="heroTitle"></h1>
-      <p class="hero__sub" id="heroSub"></p>
-      <div class="hero__pills" id="heroPills"></div>
-      <div class="hero__actions" id="heroActions"></div>
-      <div class="stats-row" id="statsRow"></div>
+<body class="inv">
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo" aria-label="Bether Studio">
+      <svg viewBox="0 0 36 36" fill="none">
+        <path d="M18 2 L33 11 L33 25 L18 34 L3 25 L3 11 Z" stroke="url(#lg)" stroke-width="1.4" fill="#0a0a0f" stroke-linejoin="round"/>
+        <text x="18" y="22" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" font-weight="600" fill="url(#lg)">BH</text>
+        <defs><linearGradient id="lg" x1="3" y1="2" x2="33" y2="34"><stop offset="0%" stop-color="#d4a574"/><stop offset="100%" stop-color="#e6c08a"/></linearGradient></defs>
+      </svg>
+      <span>Bether<i>Studio</i></span>
+    </a>
+    <div class="nav__links" id="navLinks">
+      <a href="invitaciones.html" class="active" aria-current="page">Invitaciones</a>
+      <a href="portfolio.html">Ejemplos</a>
+      <a href="precios.html">Precios</a>
+      <a href="contacto.html">Pedí la tuya</a>
+      <a href="index.html" class="nav__inv">Páginas web ↗</a>
     </div>
-    <div class="hero__phone-col" id="heroPhoneMount"></div>
+    <a href="contacto.html#pedido" class="btn btn--dark">Pedir demo gratis</a>
+    <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-  <div class="hero__scroll"><span>Explorá</span><div class="hero__scroll-line"></div></div>
-</section>
+</nav>
 
-<!-- MARQUEE -->
-<div class="mq-wrap" aria-hidden="true"><div class="mq-track" id="mqTrack"></div></div>
-
-<!-- PROOF BAR -->
-<div class="proof-bar rv" id="proofBar"></div>
-
-<!-- PROCESO (3 pasos) -->
-<section class="section" id="proceso">
-  <div class="section__inner">
-    <header class="sec-header sec-header--center rv">
-      <div class="sec-tag">Cómo trabajamos</div>
-      <h2 class="sec-title">De tu idea a la experiencia, <em>en 3 pasos</em></h2>
-      <p class="sec-sub">Sin vueltas, sin sorpresas. Sabés exactamente qué pasa antes de abonar.</p>
-    </header>
-    <div class="proceso__grid" id="procesoGrid"></div>
+<header class="hero" id="hero">
+  <canvas class="hero__fx" id="heroFx" aria-hidden="true"></canvas>
+  <div class="hero__aurora" aria-hidden="true"></div>
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__spot" id="heroSpot" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero__copy">
+      <span class="pill hero__in" style="--d:0s"><b>NUEVO</b> Invitaciones digitales interactivas</span>
+      <h1 class="hero__title">
+        <span class="ln"><span class="hero__in" style="--d:.08s">Tu fiesta</span></span>
+        <span class="ln"><span class="hero__in" style="--d:.18s">empieza</span></span>
+        <span class="ln ln--rot"><span class="hero__in" style="--d:.28s"><em class="rotator" id="rotator" data-words="con un link.|en el celular.|con su nombre.|con un toque.">con un link.</em></span></span>
+      </h1>
+      <p class="lead hero__in" style="--d:.4s">Cada invitado recibe su propio link con su nombre. Lo abre y empieza la experiencia: sobre animado, música, mini-juego y confirmación en un toque. Sin app ni descargas.</p>
+      <div class="hero__ctas hero__in" style="--d:.5s">
+        <a href="portfolio.html" class="btn btn--gold magnetic">Ver ejemplos en vivo</a>
+        <a href="#" class="btn btn--glass magnetic" data-wa="Hola Bether 👋 Quiero pedir presupuesto para una invitación digital."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg> WhatsApp</a>
+      </div>
+      <div class="checks hero__in" style="--d:.6s"><span>Demo gratis antes de pagar</span><span>Lista en 24–48 hs</span><span>Sin app ni descargas</span></div>
+    </div>
+    <div class="phones hero__in" style="--d:.3s">
+      <div class="deck" id="deck">
+        <button class="phone p-l" data-cat-phone="quinceanera" data-play></button>
+        <button class="phone p-c" data-cat-phone="casamiento" data-play></button>
+        <button class="phone p-r" data-cat-phone="adulto" data-play></button>
+        <div class="toast t1"><span class="ic ic--wa">✓</span><div><b>Valentina confirmó</b><small>hace 2 minutos</small></div></div>
+        <div class="toast t2"><span class="ic">🎮</span><div><b>Score: 1.240 pts</b><small>Mini-juego</small></div></div>
+        <div class="seal">Tocá<br>y<br>jugá</div>
+      </div>
+    </div>
   </div>
-</section>
+  <a href="#asi-se-vive" class="hero__scroll" aria-label="Bajar"><span></span></a>
+</header>
 
-<!-- FEATURES SLIDER — full width, fuera del max-width -->
-<section class="section features-section" style="padding-top:0">
-  <div class="section__inner">
-    <header class="sec-header sec-header--center rv">
-      <div class="sec-tag">Todo lo que incluye</div>
-      <h2 class="sec-title">Una experiencia completa que <strong>ninguna invitación común tiene</strong></h2>
-    </header>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Casamientos</span><span>Quinceañeras</span><span>Bautismos</span><span>Infantiles</span><span>Para adultos</span><span>Personajes favoritos</span><span>Mario Bros</span><span>Frozen</span><span>Spiderman</span><span>Dinosaurios</span><span>Minecraft</span><span>Encanto</span><span>Casamientos</span><span>Quinceañeras</span><span>Bautismos</span><span>Infantiles</span><span>Para adultos</span><span>Personajes favoritos</span><span>Mario Bros</span><span>Frozen</span><span>Spiderman</span><span>Dinosaurios</span><span>Minecraft</span><span>Encanto</span>
   </div>
-  </div><!-- /section__inner -->
-  <!-- El slider va FUERA del section__inner: sin max-width ni overflow heredado -->
-  <div id="bentoGrid"></div>
-</section>
+</div>
 
-<!-- CTA FINAL -->
-<section class="section cta-final">
-  <div class="section__inner">
-    <div class="cta-final__inner rv">
-      <h2 class="sec-title">¿Listo para crear algo que <em>nadie va a olvidar?</em></h2>
-      <p class="sec-sub">Contanos la idea. En menos de 24 hs tenés una propuesta.</p>
-      <div class="cta-final__actions">
-        <a href="contacto.html" class="btn btn--gold">Empezar ahora</a>
-        <a href="portfolio.html" class="btn btn--ghost">Ver portfolio</a>
-        <a href="precios.html" class="btn btn--ghost">Ver precios</a>
+<section class="story" id="asi-se-vive">
+  <div class="wrap">
+    <div class="section-head section-head--center rv">
+      <span class="eyebrow">Así se vive</span>
+      <h2>Del link a la fiesta, <em>paso a paso.</em></h2>
+      <p>Bajá despacio: así lo vive cada invitado (y vos).</p>
+    </div>
+    <div class="story__grid">
+      <div class="story__stage" id="storyStage" data-step="0" aria-hidden="true">
+        <div class="phone"><div class="phone__screen">
+          <div class="scr s-chat on">
+            <div class="bar"><span class="av">B</span><div><b>Betiana 💜</b><small>en línea</small></div></div>
+            <div class="body">
+              <span class="day">Hoy</span>
+              <div class="b">¡Hola Valen! 💌 Te invito a mis 15. Abrí tu invitación 👇
+                <div class="card"><div class="pv">Betiana</div><div><u>🔗 Abrir mi invitación</u>Personal para Valentina</div></div>
+                <time>18:32</time></div>
+              <div class="typing"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="scr s-env">
+            <small>PARA</small><h4>Valentina</h4>
+            <div class="env"><div class="env__back"></div><div class="env__card">Betiana</div><div class="env__front"></div><div class="env__flap"></div><div class="env__seal">B</div></div>
+            <span class="tap">— toca el sobre para abrir —</span>
+          </div>
+          <div class="scr s-info">
+            <div class="ttl">Betiana</div><div class="sub">Mis XV · 15 de agosto</div>
+            <div class="cd"><div><b>23</b><small>días</small></div><div><b>14</b><small>hs</small></div><div><b>05</b><small>min</small></div><div><b>00</b><small>seg</small></div></div>
+            <div class="row"><span class="ic">📍</span><div><b>Salón de fiestas</b><small>Palermo, CABA</small></div><div class="maps"><span>Maps</span><span>Waze</span></div></div>
+            <div class="row"><span class="ic">👗</span><div><b>Dress code</b><small>Elegante · tonos lilas</small></div></div>
+            <div class="music"><div class="eq"><i></i><i></i><i></i><i></i></div><div><b style="font-size:12.5px">Sonando ahora</b><br><small style="font-size:11px;opacity:.7">El tema que eligió Betiana</small></div></div>
+          </div>
+          <div class="scr s-rsvp">
+            <h4>¿Venís, Valentina?</h4><p>Confirmá antes del 1 de agosto</p>
+            <span class="yes">¡Sí, voy! 🎉</span><span class="no">No puedo ir</span>
+            <span class="tapdot"></span>
+            <div class="ok"><span class="big">🥳</span><b>¡Te esperamos, Valen!</b><small>Agregado a tu calendario 📅</small></div>
+            <div class="confetti"></div>
+          </div>
+          <div class="scr s-game">
+            <div class="hud"><span>⭐ 1.240 pts</span><span>⏱ 0:42</span></div>
+            <div class="field"><span class="star">⭐</span><span class="star">💎</span><span class="star">⭐</span><span class="star">🌟</span><span class="player">👑</span></div>
+            <div class="rank"><b>Ranking de invitados</b><div><span>1. Valen</span><span>1.240</span></div><div><span>2. Tomi</span><span>1.105</span></div><div><span>3. Sofi</span><span>980</span></div></div>
+          </div>
+          <div class="scr s-panel">
+            <h5>Panel · XV de Betiana</h5>
+            <div class="kpi"><span class="ring" style="--p:72"><b>72%</b></span><div><strong>87 / 120</strong><small>invitados confirmados</small></div></div>
+            <div class="list">
+              <div><i style="background:#a78bfa">V</i>Valentina<span class="y">Confirmó</span></div>
+              <div><i style="background:#60a5fa">T</i>Tomás<span class="y">Confirmó</span></div>
+              <div><i style="background:#f472b6">S</i>Sofía<span class="p">Pendiente</span></div>
+              <div><i style="background:#34d399">J</i>Juli<span class="y">Confirmó</span></div>
+            </div>
+            <div class="tables"><div><b>Mesa 1</b>8 / 8</div><div><b>Mesa 2</b>6 / 8</div><div><b>Mesa 3</b>8 / 8</div></div>
+          </div>
+        </div><span class="phone__notch"></span><span class="phone__glare"></span></div>
+      </div>
+      <div class="story__steps">
+        <div class="sstep"><div>
+          <span class="n">01</span>
+          <h3>Le llega su link <em>con su nombre.</em></h3>
+          <p>Mandás la invitación por WhatsApp y cada invitado recibe un link personal. No es una imagen más en el chat: es para él.</p>
+          <div class="chips"><span>Link personalizado</span><span>Sin app</span></div>
+        </div></div>
+        <div class="sstep"><div>
+          <span class="n">02</span>
+          <h3>Abre el sobre <em>y empieza la magia.</em></h3>
+          <p>Un sobre lacrado con su nombre que se abre al tocarlo. Desde el primer segundo sabe que esta fiesta es distinta.</p>
+          <div class="chips"><span>Animaciones</span><span>Diseño a medida</span></div>
+        </div></div>
+        <div class="sstep"><div>
+          <span class="n">03</span>
+          <h3>Tiene todo <em>en un solo lugar.</em></h3>
+          <p>Cuenta regresiva en vivo, ubicación con un toque a Maps o Waze, dress code y la música que elegiste sonando de fondo.</p>
+          <div class="chips"><span>Countdown</span><span>Mapas</span><span>Música</span></div>
+        </div></div>
+        <div class="sstep"><div>
+          <span class="n">04</span>
+          <h3>Confirma <em>en un toque.</em></h3>
+          <p>Sin mensajes perdidos ni listas en papel: confirma desde la invitación y la fecha queda en su calendario.</p>
+          <div class="chips"><span>RSVP</span><span>Calendario</span></div>
+        </div></div>
+        <div class="sstep"><div>
+          <span class="n">05</span>
+          <h3>Juega <em>antes de llegar.</em></h3>
+          <p>Un mini-juego o trivia con la temática del evento. Los invitados compiten y llegan a la fiesta hablando de eso.</p>
+          <div class="chips"><span>Mini-juego</span><span>Trivia</span><span>Ranking</span></div>
+        </div></div>
+        <div class="sstep"><div>
+          <span class="n">06</span>
+          <h3>Y vos ves todo <em>en tiempo real.</em></h3>
+          <p>Quién confirmó, quién falta y cómo se arman las mesas, desde tu celular. El salón recibe la lista lista.</p>
+          <div class="chips"><span>Panel en vivo</span><span>Armado de mesas</span></div>
+        </div></div>
       </div>
     </div>
   </div>
 </section>
 
-</main>
-
-<footer id="footer" class="footer"></footer>
-
-<!-- MODAL EFECTO APP -->
-<div class="appmodal" id="appModal" role="dialog" aria-modal="true" aria-label="Demo de invitación">
-  <button class="appmodal__close" id="appModalClose" aria-label="Cerrar">✕</button>
-  <div class="appmodal__phone" id="appModalPhone">
-    <div class="appmodal__notch"><div class="phone__cam"></div><div class="phone__spk"></div></div>
-    <div class="appmodal__screen" id="appModalScreen">
-      <div class="appmodal__loader" id="appModalLoader"></div>
-      <iframe id="appModalFrame" src="about:blank" title="Demo" allow="autoplay;fullscreen" allowfullscreen></iframe>
+<section id="incluye" style="padding-top:60px">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Todo lo que incluye</span>
+      <h2>Una experiencia completa que <em>ninguna invitación común tiene.</em></h2>
     </div>
-    <div class="appmodal__home"></div>
+    <div class="bento">
+      <div class="bx bx--wide bx--dark rv"><span class="ic">🔗</span><span class="tag">Exclusivo Bether</span><h3>Link con nombre propio</h3><span class="url">…/xv/<b>valentina</b></span><p>Cada invitado recibe su propio link único con su nombre. No es solo una invitación, es un gesto. Sin descarga, sin app.</p></div>
+      <div class="bx  rv"><span class="ic">📊</span><span class="tag">En vivo</span><h3>Panel en tiempo real</h3><p>Quién confirmó, quién no, qué puntaje hicieron. Todo desde tu celular.</p></div>
+      <div class="bx  rv"><span class="ic">🎬</span><span class="tag">Con IA</span><h3>Video personalizado con IA</h3><p>Un video único dentro de la invitación, con música generada por IA.</p></div>
+      <div class="bx  rv"><span class="ic">🎮</span><span class="tag">Interactivo</span><h3>Mini-juego o trivia temática</h3><p>Canvas interactivo con la temática. Tus invitados juegan antes de llegar.</p></div>
+      <div class="bx bx--wide rv"><span class="ic">🪑</span><span class="tag">Organización total</span><h3>Armado de mesa inteligente + lista para el salón</h3><p>Acomodás a tus invitados según el salón. La lista queda lista. Sin estrés, sin papeles.</p></div>
+      <div class="bx  rv"><span class="ic">🎵</span><span class="tag">Con IA</span><h3>Música + sugerencias playlist</h3><p>Audio temático con IA y sugerencias de canciones para la playlist del evento.</p></div>
+      <div class="bx  rv"><span class="ic">⏳</span><span class="tag">Tiempo real</span><h3>Countdown en vivo</h3><p>Días, horas, minutos y segundos. Se actualiza solo.</p></div>
+      <div class="bx  rv"><span class="ic">🗺️</span><span class="tag">Sin fricción</span><h3>Mapas integrados</h3><p>Google Maps, Waze y Apple Maps. Un tap y el GPS abre directo al salón.</p></div>
+      <div class="bx bx--wide bx--dark rv"><span class="ic">✅</span><span class="tag">Elegante</span><h3>RSVP + calendario</h3><p>Confirmación con GIF personalizado y un tap para agregar al calendario.</p></div>
+    </div>
   </div>
-  <div class="appmodal__label" id="appModalLabel">Navegá la invitación como un invitado</div>
-</div>
+</section>
 
-<!-- FAB WHATSAPP -->
-<a href="#" class="fab-wa" id="fabWa" aria-label="Hablar por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
+<section id="celebraciones" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head section-head--row rv">
+      <div>
+        <span class="eyebrow">Para cada celebración</span>
+        <h2>Una experiencia <em>para cada fiesta.</em></h2>
+      </div>
+      <a href="portfolio.html" class="btn btn--ghost">Ver todos los ejemplos →</a>
+    </div>
+    <div class="celebs">
+      <a class="celeb rv" href="portfolio.html#casamiento"><div class="phone" data-cat-phone="casamiento"></div><b>💍 Casamiento</b><small>Sobre animado · Link por invitado</small></a>
+      <a class="celeb rv" href="portfolio.html#quinceanera"><div class="phone" data-cat-phone="quinceanera"></div><b>👑 XV años</b><small>Nombre animado · Música</small></a>
+      <a class="celeb rv" href="portfolio.html#adulto"><div class="phone" data-cat-phone="adulto"></div><b>🥂 Cumple adulto</b><small>Estética neón · Playlist</small></a>
+      <a class="celeb rv" href="portfolio.html#infantil"><div class="phone" data-cat-phone="infantil"></div><b>🎈 Infantil</b><small>Mini-juego · Personajes</small></a>
+      <a class="celeb rv" href="portfolio.html#medida"><div class="phone" data-cat-phone="medida"></div><b>✨ A medida</b><small>Diseño exclusivo · Cualquier temática</small></a>
+    </div>
+  </div>
+</section>
+
+<section class="salon-strip">
+  <div class="wrap">
+    <a href="https://bether2026.github.io/bether/" target="_blank" rel="noopener" class="rv">
+      <span class="em">🏛️</span>
+      <div><h3>¿Tenés un salón de fiestas? <em>Sumalas a tu marca.</em></h3><p>Ofrecé invitaciones digitales con el nombre de tu salón a cada cliente.</p></div>
+      <span class="go">Ver propuesta →</span>
+    </a>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-band__box rv">
+      <span class="eyebrow">Tu fiesta</span>
+      <h2>Creemos algo que <em>nadie va a olvidar.</em></h2>
+      <p>Contanos la idea y en 24–48 hs tenés tu invitación funcionando en el celular. Si no te convence, no pagás nada.</p>
+      <div class="cta-band__btns">
+        <a href="contacto.html#pedido" class="btn btn--gold">Pedí tu demo gratis</a>
+        <a href="#" class="btn btn--glass" data-wa="Hola Bether 👋 Quiero pedir presupuesto para una invitación digital."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="logo"><span>Bether<i>Studio</i></span></a>
+    <nav>
+      <a href="invitaciones.html">Invitaciones</a>
+      <a href="portfolio.html">Ejemplos</a>
+      <a href="precios.html">Precios</a>
+      <a href="contacto.html">Pedí la tuya</a>
+      <a href="index.html">Páginas web</a>
+    </nav>
+    <span>© <span id="year"></span> Bether Studio · Buenos Aires</span>
+  </div>
+</footer>
+
+<a href="#" class="fab-wa" data-wa="Hola Bether 👋 Quiero pedir presupuesto para una invitación digital." aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
 </a>
 
-<script src="js/content.js"></script>
-<script src="js/shared.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/index.js"></script>
-<script src="js/fx.js"></script>
+<script src="js/content.js?v=2"></script>
+<script src="js/inv.js?v=1"></script>
+<script src="js/webs.js?v=4"></script>
 </body>
 </html>

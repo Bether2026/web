@@ -6,45 +6,15 @@ const CONTENT = {
 
   negocio: {
     nombre:    "Bether Studio",
-    tagline:   "Invitaciones digitales interactivas que convierten un link en algo que nadie olvida.",
+    tagline:   "Páginas web para negocios e invitaciones digitales interactivas.",
     whatsapp:  "5491145309135",
     ciudad:    "Buenos Aires, Argentina",
     mensajeWA: "Hola Bether 👋 Quiero pedir presupuesto para una invitación digital."
   },
 
-  hero: {
-    eyebrow:       "Buenos Aires · Disponible ahora",
-    titulo:        "No son solo invitaciones. Son <em>experiencias.</em>",
-    subtitulo:     "Cada invitado recibe <strong>su propio link con su nombre</strong>. Lo abre y empieza la experiencia. Sin app, sin descarga, sin límites.",
-    pills:         ["🔗 Link personalizado","📊 Panel de control","🎬 Video con IA","🪑 Armado de mesa","🎮 Mini-juego"],
-    ctaPrimario:   "Ver experiencias",
-    ctaPrimarioHref: "portfolio.html",
-    ctaSecundario: "WhatsApp",
-    stats: [
-      { n:"24hs", l:"Demo lista" },
-      { n:"$0",   l:"Si no te convence" },
-      { n:"∞",    l:"Temáticas" },
-      { n:"1 link", l:"Sin app" }
-    ],
-    demo: {
-      titulo:   "Cumple de Agustín",
-      emojis:   "🍄⭐🪙",
-      url:      "https://bether2026.github.io/MarioBross/",
-      hintMobile: "Tocá y viví la experiencia",
-      hintDesktop:"Hacé clic y viví la experiencia"
-    }
-  },
-
   marquee: ["Casamientos","Quinceañeras","Bautismos","Infantiles","Para adultos",
             "Personajes favoritos","Mario Bros","Frozen","Spiderman",
             "Dinosaurios","Minecraft","Encanto"],
-
-  proof: [
-    { bold:"Demo gratis", txt:"antes de pagar" },
-    { bold:"Link", txt:"con el nombre de cada invitado" },
-    { bold:"Sin app", txt:"ni descargas" },
-    { bold:"24–48 hs", txt:"de entrega" }
-  ],
 
   /* BENTO — features incluidas */
   features: [
@@ -78,28 +48,35 @@ const CONTENT = {
       sub:"Tu evento, tu experiencia" }
   ],
 
-  /* PORTFOLIO — categorías para el selector interactivo */
+  /* EJEMPLOS — cada categoría con su demo en vivo.
+     img: captura de la portada · pantalla: 'xv' o 'medida' si se dibuja en HTML
+     glow: color del resplandor detrás del teléfono */
   categorias: [
-    { id:"infantil",   label:"Infantil",    video:"",
-      demo:"https://bob-esponja-delta.vercel.app/",
-      coverEmoji:"🎮", coverBg:"linear-gradient(160deg,#0d1f35,#1a4a7a 45%,#d63a2f 75%,#3a8a2a)",
-      titulo:"Experiencias infantiles", desc:"Mario Bros, Frozen, Spiderman, Dinosaurios, Minecraft y la que se te ocurra." },
-    { id:"casamiento", label:"Casamiento",  video:"",
-      demo:"https://bether2026.github.io/casamiento-prueba/",
-      coverEmoji:"💍", coverBg:"linear-gradient(160deg,#141009,#3d2b14 50%,#d4a574)",
-      titulo:"Casamientos con clase",   desc:"Elegancia, emoción y cada detalle en su lugar. Link personalizado por invitado." },
-    { id:"quinceanera",label:"Quinceañera", video:"",
-      demo:"https://bether2026.github.io/Fiestaxv/",
-      coverEmoji:"👑", coverBg:"linear-gradient(160deg,#1a0b2e,#5b21b6 55%,#d4a574)",
-      titulo:"Quinceañeras únicas",     desc:"La noche más especial merece la invitación más especial." },
-    { id:"adulto",     label:"Adulto",      video:"",
-      demo:"https://cumplebet41.vercel.app/",
-      coverEmoji:"🥂", coverBg:"linear-gradient(160deg,#0f0a14,#6d28d9 50%,#d4a574)",
-      titulo:"Cumpleaños de adultos",   desc:"Elegante, divertido y a tu medida. La fiesta empieza desde el link." },
-    { id:"medida",     label:"A medida",    video:"",
-      demo:"",
-      coverEmoji:"✨", coverBg:"linear-gradient(160deg,#0a0a14,#7c3aed 55%,#22d3ee)",
-      titulo:"Completamente a medida",  desc:"Temática exclusiva, diseño único, funcionalidades personalizadas." }
+    { id:"casamiento", label:"Casamiento", emoji:"💍",
+      demo:"https://bether2026.github.io/casamiento-prueba/", img:"img/inv/casamiento.jpg",
+      glow:"rgba(212,165,116,.45)",
+      titulo:"Casamientos con clase", desc:"Un sobre lacrado que se abre con el nombre de cada invitado. Elegancia, emoción y cada detalle en su lugar.",
+      feats:["Sobre animado","Link por invitado","Armado de mesas","RSVP en vivo"] },
+    { id:"quinceanera", label:"XV años", emoji:"👑",
+      demo:"https://bether2026.github.io/Fiestaxv/", pantalla:"xv",
+      glow:"rgba(167,139,250,.5)",
+      titulo:"Quinceañeras únicas", desc:"La noche más especial merece la invitación más especial: brillos, música y su nombre escribiéndose solo.",
+      feats:["Nombre animado","Música","Countdown","Galería"] },
+    { id:"adulto", label:"Cumple adulto", emoji:"🥂",
+      demo:"https://cumplebet41.vercel.app/", img:"img/inv/adulto.jpg",
+      glow:"rgba(34,211,238,.38)",
+      titulo:"Cumpleaños de adultos", desc:"Bola de boliche, luces de neón y la pista esperando. La fiesta empieza desde el link.",
+      feats:["Estética neón","Playlist","Confirmación","Mapa"] },
+    { id:"infantil", label:"Infantil", emoji:"🎈",
+      demo:"https://bob-esponja-delta.vercel.app/", img:"img/inv/infantil.jpg",
+      glow:"rgba(56,189,248,.42)",
+      titulo:"Experiencias infantiles", desc:"Su personaje favorito, un mini-juego y la invitación que los chicos quieren abrir una y otra vez.",
+      feats:["Mini-juego","Personajes","Música","RSVP"] },
+    { id:"medida", label:"A medida", emoji:"✨",
+      demo:"", pantalla:"medida",
+      glow:"rgba(236,72,153,.38)",
+      titulo:"Completamente a medida", desc:"Temática exclusiva, diseño único y las funciones que imagines. Si se te ocurre, lo hacemos.",
+      feats:["Diseño exclusivo","Cualquier temática","Funciones a pedido"] }
   ],
 
   /* PRECIOS */
