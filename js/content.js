@@ -21,10 +21,10 @@ const CONTENT = {
     ctaPrimarioHref: "portfolio.html",
     ctaSecundario: "WhatsApp",
     stats: [
-      { n:"+50",  l:"Experiencias" },
-      { n:"24hs", l:"Entrega" },
-      { n:"100%", l:"Recomendación" },
-      { n:"∞",    l:"Temáticas" }
+      { n:"24hs", l:"Demo lista" },
+      { n:"$0",   l:"Si no te convence" },
+      { n:"∞",    l:"Temáticas" },
+      { n:"1 link", l:"Sin app" }
     ],
     demo: {
       titulo:   "Cumple de Agustín",
@@ -40,10 +40,10 @@ const CONTENT = {
             "Dinosaurios","Minecraft","Encanto"],
 
   proof: [
-    { icon:"★★★★★", bold:"5.0", txt:"Google" },
-    { bold:"+50", txt:"familias felices" },
-    { bold:"100%", txt:"recomendación" },
-    { txt:"Entrega ", bold:"24–48 hs" }
+    { bold:"Demo gratis", txt:"antes de pagar" },
+    { bold:"Link", txt:"con el nombre de cada invitado" },
+    { bold:"Sin app", txt:"ni descargas" },
+    { bold:"24–48 hs", txt:"de entrega" }
   ],
 
   /* BENTO — features incluidas */
@@ -80,15 +80,15 @@ const CONTENT = {
 
   /* PORTFOLIO — categorías para el selector interactivo */
   categorias: [
-    { id:"infantil",   label:"Infantil",    video:"https://r2.betherstudio.com/previews/infantil.mp4",
+    { id:"infantil",   label:"Infantil",    video:"",
       demo:"https://bob-esponja-delta.vercel.app/",
       coverEmoji:"🎮", coverBg:"linear-gradient(160deg,#0d1f35,#1a4a7a 45%,#d63a2f 75%,#3a8a2a)",
       titulo:"Experiencias infantiles", desc:"Mario Bros, Frozen, Spiderman, Dinosaurios, Minecraft y la que se te ocurra." },
-    { id:"casamiento", label:"Casamiento",  video:"https://r2.betherstudio.com/previews/casamiento.mp4",
+    { id:"casamiento", label:"Casamiento",  video:"",
       demo:"https://bether2026.github.io/casamiento-prueba/",
       coverEmoji:"💍", coverBg:"linear-gradient(160deg,#141009,#3d2b14 50%,#d4a574)",
       titulo:"Casamientos con clase",   desc:"Elegancia, emoción y cada detalle en su lugar. Link personalizado por invitado." },
-    { id:"quinceanera",label:"Quinceañera", video:"https://r2.betherstudio.com/previews/quinceanera.mp4",
+    { id:"quinceanera",label:"Quinceañera", video:"",
       demo:"https://bether2026.github.io/Fiestaxv/",
       coverEmoji:"👑", coverBg:"linear-gradient(160deg,#1a0b2e,#5b21b6 55%,#d4a574)",
       titulo:"Quinceañeras únicas",     desc:"La noche más especial merece la invitación más especial." },
@@ -96,7 +96,7 @@ const CONTENT = {
       demo:"https://cumplebet41.vercel.app/",
       coverEmoji:"🥂", coverBg:"linear-gradient(160deg,#0f0a14,#6d28d9 50%,#d4a574)",
       titulo:"Cumpleaños de adultos",   desc:"Elegante, divertido y a tu medida. La fiesta empieza desde el link." },
-    { id:"medida",     label:"A medida",    video:"https://r2.betherstudio.com/previews/medida.mp4",
+    { id:"medida",     label:"A medida",    video:"",
       demo:"",
       coverEmoji:"✨", coverBg:"linear-gradient(160deg,#0a0a14,#7c3aed 55%,#22d3ee)",
       titulo:"Completamente a medida",  desc:"Temática exclusiva, diseño único, funcionalidades personalizadas." }
@@ -196,12 +196,6 @@ const CONTENT = {
       a:"Nos contás la idea y los datos del evento. En 24 a 48 horas te enviamos un demo completo para que lo veas funcionando en tu celular — sin cargo. Si te gusta, elegís el plan, abonás y habilitamos el link definitivo." },
     { q:"¿Qué cuenta como una revisión?",
       a:"Una revisión es una ronda de cambios: textos, colores, elementos visuales. Podés agrupar todos los cambios que quieras en cada revisión." }
-  ],
-
-  testimonios: [
-    { texto:"Los invitados no podían creer que cada uno tenía su link con su nombre. Me preguntaron toda la fiesta quién la hizo.", autor:"Romina", evento:"Cumple de Thiago" },
-    { texto:"El armado de mesas me salvó la vida. Llegué al salón con todo resuelto desde el celular.", autor:"Carolina", evento:"Quince de Valentina" },
-    { texto:"Pedimos un cambio de música un sábado a la noche y en una hora estaba listo.", autor:"Sofía", evento:"Casamiento" }
   ],
 
   contacto: {

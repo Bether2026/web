@@ -3,10 +3,6 @@
 const C=window.CONTENT, B=window.BETHER;
 if(!C||!B) return;
 
-/* Testimonio */
-const ht=document.getElementById('preciosTestimonio');
-if(ht) ht.innerHTML=`<em>"Llegué al salón con todo resuelto desde el celular"</em> — Carolina, quince de Valentina`;
-
 /* Features resumidas debajo del precio grande */
 const pf=document.getElementById('precioFeatures');
 if(pf){

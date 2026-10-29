@@ -3,154 +3,336 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bether Studio — Invitaciones digitales interactivas | Buenos Aires</title>
-<meta name="description" content="Invitaciones digitales que sorprenden desde el primer segundo: link personalizado por invitado, mini-juego, música con IA y panel de confirmaciones en tiempo real. Pedí tu presupuesto.">
-<link rel="canonical" href="https://bether2026.github.io/Prueba2web/">
+<title>Bether Studio — Páginas web para tu negocio | Buenos Aires</title>
+<meta name="description" content="Diseñamos páginas web modernas y pensadas para celular, con una cuota mensual que incluye hosting, cambios y soporte. También hacemos invitaciones digitales.">
+<link rel="canonical" href="https://bether-studio.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bether Studio — Invitaciones digitales interactivas">
-<meta property="og:description" content="Cada invitado recibe su propio link. Animaciones, música con IA, mini-juego y confirmación en tiempo real.">
-<meta property="og:image" content="assets/images/og.jpg">
+<meta property="og:title" content="Bether Studio — Tu negocio, con una web que vende">
+<meta property="og:description" content="Webs a medida con cuota mensual: diseño, hosting, cambios y soporte incluidos.">
+<meta property="og:image" content="https://bether-studio.com/img/learningtofly.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Bether Studio","description":"Invitaciones digitales interactivas para eventos.","areaServed":"Buenos Aires, Argentina","email":"hola@betherstudio.com.ar","sameAs":["https://instagram.com/betherstudio"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Bether Studio","description":"Diseño de páginas web para negocios e invitaciones digitales interactivas.","url":"https://bether-studio.com/","areaServed":"Argentina"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/animations.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/sections.css">
-<link rel="stylesheet" href="css/responsive.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/webs.css">
 </head>
 <body>
-<div class="bg-nebula" aria-hidden="true"></div>
-<div class="bg-grid" aria-hidden="true"></div>
 
-<!-- ══ GATE DE ENTRADA ══════════════════════════════════════ -->
-<div class="gate" id="gate">
-  <div class="gate__bg"></div>
-  <div class="gate__inner">
-    <div class="gate__logo">
-      <svg viewBox="0 0 36 36" fill="none" width="48" height="48">
-        <path d="M18 2 L33 11 L33 25 L18 34 L3 25 L3 11 Z" stroke="url(#gg)" stroke-width="1" fill="none" stroke-linejoin="round"/>
-        <text x="18" y="22" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" font-weight="600" fill="url(#gg)">BH</text>
-        <defs><linearGradient id="gg" x1="3" y1="2" x2="33" y2="34"><stop offset="0%" stop-color="#d4a574"/><stop offset="100%" stop-color="#e6c08a"/></linearGradient></defs>
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo" aria-label="Bether Studio">
+      <svg viewBox="0 0 36 36" fill="none">
+        <path d="M18 2 L33 11 L33 25 L18 34 L3 25 L3 11 Z" stroke="url(#lg)" stroke-width="1.4" fill="#0a0a0f" stroke-linejoin="round"/>
+        <text x="18" y="22" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" font-weight="600" fill="url(#lg)">BH</text>
+        <defs><linearGradient id="lg" x1="3" y1="2" x2="33" y2="34"><stop offset="0%" stop-color="#d4a574"/><stop offset="100%" stop-color="#e6c08a"/></linearGradient></defs>
       </svg>
-      <span>Bether<em>Studio</em></span>
+      <span>Bether<i>Studio</i></span>
+    </a>
+    <div class="nav__links" id="navLinks">
+      <a href="#trabajos">Trabajos</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#planes">Planes</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="invitaciones.html" class="nav__inv">Invitaciones ✦</a>
     </div>
-    <p class="gate__pre">Buenos Aires · Invitaciones digitales</p>
-    <h1 class="gate__title">¿Cómo llegaste<br><em>hasta acá?</em></h1>
-    <p class="gate__sub">Cada camino tiene su propia experiencia.</p>
-    <div class="gate__cards">
-      <button class="gate__card" id="gateParticular">
-        <div class="gate__card-icon">🎉</div>
-        <div class="gate__card-title">Tengo un evento<br>que celebrar</div>
-        <div class="gate__card-desc">Quiero una invitación digital para mi fiesta, casamiento, XV o cumpleaños.</div>
-        <div class="gate__card-cta">Ver invitaciones →</div>
-      </button>
-      <button class="gate__card gate__card--salon" id="gateSalon">
-        <div class="gate__card-icon">🏛️</div>
-        <div class="gate__card-title">Tengo un salón<br>de fiestas</div>
-        <div class="gate__card-desc">Quiero ofrecer experiencias digitales a mis clientes con mi propia marca.</div>
-        <div class="gate__card-cta">Ver propuesta →</div>
-      </button>
+    <a href="#contacto" class="btn btn--dark">Quiero mi web</a>
+    <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="pill"><b>NUEVO</b> Páginas web con cuota mensual</span>
+      <h1>Tu negocio, con una web que <em>vende.</em></h1>
+      <p class="lead">Diseñamos páginas modernas, rápidas y pensadas para celular. Sin pagar una fortuna de entrada: una cuota por mes con hosting, cambios y soporte incluidos.</p>
+      <div class="hero__ctas">
+        <a href="#trabajos" class="btn btn--dark">Ver trabajos</a>
+        <a href="#" class="btn btn--ghost" data-wa="Hola Bether! Vi su página y quiero consultar por una web para mi negocio.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
+          Consultar por WhatsApp
+        </a>
+      </div>
+      <div class="checks"><span>Demo gratis antes de pagar</span><span>Sin permanencia</span><span>Dominio a tu nombre</span></div>
     </div>
+    <div class="stack rv" aria-hidden="true">
+      <div class="browser b1"><div class="browser__bar"><i></i><i></i><i></i><span>learningtoflyacademy.com</span></div><img src="img/learningtofly.png" alt=""></div>
+      <div class="browser b2"><div class="browser__bar"><i></i><i></i><i></i><span>salón bether</span></div><img src="img/salon.jpg" alt=""></div>
+      <div class="browser b3"><div class="browser__bar"><i></i><i></i><i></i><span>algrano.com.ar</span></div><img src="img/algrano.png" alt=""></div>
+      <div class="seal">Webs<br>reales,<br>en uso</div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Academias</span><span>Salones de eventos</span><span>Restaurantes</span><span>Estética</span><span>Profesionales</span><span>Comercios</span><span>Gimnasios</span><span>Emprendedores</span>
+    <span>Academias</span><span>Salones de eventos</span><span>Restaurantes</span><span>Estética</span><span>Profesionales</span><span>Comercios</span><span>Gimnasios</span><span>Emprendedores</span>
   </div>
 </div>
-<!-- ══ FIN GATE ════════════════════════════════════════════ -->
 
-<nav class="nav" id="nav"></nav>
-
-<main>
-
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <div class="hero__inner">
-    <div class="hero__copy">
-      <div class="hero__eyebrow"><span class="hero__dot"></span><span id="heroEyebrow"></span></div>
-      <h1 class="hero__title" id="heroTitle"></h1>
-      <p class="hero__sub" id="heroSub"></p>
-      <div class="hero__pills" id="heroPills"></div>
-      <div class="hero__actions" id="heroActions"></div>
-      <div class="stats-row" id="statsRow"></div>
+<section id="trabajos">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Trabajos que ya están <em>online.</em></h2>
+      <p>Cada web es distinta porque cada negocio es distinto. Entrá, navegalas desde tu celular y fijate cómo se sienten.</p>
     </div>
-    <div class="hero__phone-col" id="heroPhoneMount"></div>
-  </div>
-  <div class="hero__scroll"><span>Explorá</span><div class="hero__scroll-line"></div></div>
-</section>
 
-<!-- MARQUEE -->
-<div class="mq-wrap" aria-hidden="true"><div class="mq-track" id="mqTrack"></div></div>
+    <div class="filters rv" id="filters">
+      <button class="chip active" data-f="all">Todos</button>
+      <button class="chip" data-f="educacion">Educación</button>
+      <button class="chip" data-f="eventos">Eventos</button>
+      <button class="chip" data-f="servicios">Servicios e información</button>
+    </div>
 
-<!-- PROOF BAR -->
-<div class="proof-bar rv" id="proofBar"></div>
+    <div class="work-grid">
+      <article class="work featured rv" data-cat="educacion">
+        <div class="shot">
+          <span class="status">En uso</span>
+          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>learningtoflyacademy.com</span></div><img src="img/learningtofly.png" alt="Página de Learning to Fly Academy" loading="lazy"></div>
+        </div>
+        <div class="info">
+          <span class="cat">Academia de inglés · Argentina y España</span>
+          <h3>Learning to Fly Academy</h3>
+          <p>Web para una academia de clases individuales. Explica el método paso a paso, muestra planes con precios en pesos y euros, y lleva al alumno directo a pedir su clase de prueba.</p>
+          <div class="tags"><span>Planes y precios ARS / EUR</span><span>Adultos · Kids · Exámenes</span><span>Preguntas frecuentes</span><span>Botón de WhatsApp</span><span>Acceso alumnos</span></div>
+          <a class="live" href="https://www.learningtoflyacademy.com/" target="_blank" rel="noopener">Ver sitio en vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
 
-<!-- PROCESO (3 pasos) -->
-<section class="section" id="proceso">
-  <div class="section__inner">
-    <header class="sec-header sec-header--center rv">
-      <div class="sec-tag">Cómo trabajamos</div>
-      <h2 class="sec-title">De tu idea a la experiencia, <em>en 3 pasos</em></h2>
-      <p class="sec-sub">Sin vueltas, sin sorpresas. Sabés exactamente qué pasa antes de abonar.</p>
-    </header>
-    <div class="proceso__grid" id="procesoGrid"></div>
-  </div>
-</section>
+      <article class="work rv" data-cat="eventos">
+        <div class="shot">
+          <span class="status demo">Demo</span>
+          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>salón bether</span></div><img src="img/salon.jpg" alt="Página del Salón Bether" loading="lazy"></div>
+        </div>
+        <div class="info">
+          <span class="cat">Salón de eventos</span>
+          <h3>Salón Bether</h3>
+          <p>Estética elegante en negro y dorado para un salón de fiestas. Muestra los espacios con su capacidad, galería, testimonios e invitaciones digitales con confirmación de asistencia.</p>
+          <div class="tags"><span>Galería</span><span>Espacios y capacidad</span><span>Testimonios</span><span>Invitaciones digitales</span></div>
+          <a class="live" href="https://bether2026.github.io/salon/" target="_blank" rel="noopener">Ver demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
 
-<!-- FEATURES SLIDER — full width, fuera del max-width -->
-<section class="section features-section" style="padding-top:0">
-  <div class="section__inner">
-    <header class="sec-header sec-header--center rv">
-      <div class="sec-tag">Todo lo que incluye</div>
-      <h2 class="sec-title">Una experiencia completa que <strong>ninguna invitación común tiene</strong></h2>
-    </header>
-  </div>
-  </div><!-- /section__inner -->
-  <!-- El slider va FUERA del section__inner: sin max-width ni overflow heredado -->
-  <div id="bentoGrid"></div>
-</section>
+      <article class="work rv" data-cat="servicios">
+        <div class="shot">
+          <span class="status">En uso</span>
+          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>algrano.com.ar</span></div><img src="img/algrano.png" alt="Página de Al Grano" loading="lazy"></div>
+        </div>
+        <div class="info">
+          <span class="cat">Portal de guías · Contenido</span>
+          <h3>Al Grano</h3>
+          <p>Portal con más de 30 guías de trámites y reclamos. Tiene buscador, categorías, lo más buscado, modo oscuro y un buscador de municipio por barrio.</p>
+          <div class="tags"><span>Buscador</span><span>+30 guías</span><span>Modo oscuro</span><span>Categorías</span></div>
+          <a class="live" href="https://algrano.com.ar/" target="_blank" rel="noopener">Ver sitio en vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
+    </div>
 
-<!-- CTA FINAL -->
-<section class="section cta-final">
-  <div class="section__inner">
-    <div class="cta-final__inner rv">
-      <h2 class="sec-title">¿Listo para crear algo que <em>nadie va a olvidar?</em></h2>
-      <p class="sec-sub">Contanos la idea. En menos de 24 hs tenés una propuesta.</p>
-      <div class="cta-final__actions">
-        <a href="contacto.html" class="btn btn--gold">Empezar ahora</a>
-        <a href="portfolio.html" class="btn btn--ghost">Ver portfolio</a>
-        <a href="precios.html" class="btn btn--ghost">Ver precios</a>
+    <div class="rubros rv">
+      <h3>¿Tu rubro no está? Te armamos una muestra.</h3>
+      <p>Tocá tu rubro y pedinos una demo sin compromiso, con tu nombre y tus colores.</p>
+      <div class="rubro-grid">
+        <button class="rubro" data-rubro="un restaurante / bar"><span class="em">🍽️</span><b>Gastronomía</b><small>Carta online, reservas y pedidos por WhatsApp</small></button>
+        <button class="rubro" data-rubro="un centro de estética / peluquería"><span class="em">💇</span><b>Estética</b><small>Servicios, precios, turnos y galería de trabajos</small></button>
+        <button class="rubro" data-rubro="un gimnasio / estudio"><span class="em">🏋️</span><b>Gimnasios</b><small>Horarios, clases, planes y profes</small></button>
+        <button class="rubro" data-rubro="un consultorio / estudio profesional"><span class="em">🩺</span><b>Profesionales</b><small>Especialidades, turnos y ubicación</small></button>
+        <button class="rubro" data-rubro="un comercio / tienda"><span class="em">🛍️</span><b>Comercios</b><small>Catálogo de productos y pedidos</small></button>
       </div>
     </div>
   </div>
 </section>
 
-</main>
-
-<footer id="footer" class="footer"></footer>
-
-<!-- MODAL EFECTO APP -->
-<div class="appmodal" id="appModal" role="dialog" aria-modal="true" aria-label="Demo de invitación">
-  <button class="appmodal__close" id="appModalClose" aria-label="Cerrar">✕</button>
-  <div class="appmodal__phone" id="appModalPhone">
-    <div class="appmodal__notch"><div class="phone__cam"></div><div class="phone__spk"></div></div>
-    <div class="appmodal__screen" id="appModalScreen">
-      <div class="appmodal__loader" id="appModalLoader"></div>
-      <iframe id="appModalFrame" src="about:blank" title="Demo" allow="autoplay;fullscreen" allowfullscreen></iframe>
+<section class="extra" id="tambien">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">También hacemos</span>
+      <h2>Para eventos, <em>experiencias.</em></h2>
     </div>
-    <div class="appmodal__home"></div>
+    <div class="extra-grid">
+      <a href="invitaciones.html" class="extra-card rv">
+        <span class="em">🎉</span>
+        <span class="eyebrow">Invitaciones digitales</span>
+        <h3>No son solo invitaciones. Son <em>experiencias.</em></h3>
+        <p>Link con el nombre de cada invitado, mini-juego, música, confirmación en tiempo real y armado de mesas. Para cumpleaños, XV, casamientos y más.</p>
+        <span class="go">Ver invitaciones →</span>
+      </a>
+      <a href="https://bether2026.github.io/bether/" target="_blank" rel="noopener" class="extra-card extra-card--light rv">
+        <span class="em">🏛️</span>
+        <span class="eyebrow">Para salones de fiestas</span>
+        <h3>Tu salón, con <em>su propia</em> web e invitaciones.</h3>
+        <p>Una web que muestra tus espacios y la posibilidad de ofrecer invitaciones digitales con tu marca a cada cliente.</p>
+        <span class="go">Ver propuesta →</span>
+      </a>
+    </div>
   </div>
-  <div class="appmodal__label" id="appModalLabel">Navegá la invitación como un invitado</div>
-</div>
+</section>
 
-<!-- FAB WHATSAPP -->
-<a href="#" class="fab-wa" id="fabWa" aria-label="Hablar por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
+<section id="incluye" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Qué incluye</span>
+      <h2>Todo lo que necesita tu web. <em>Sin vueltas.</em></h2>
+      <p>No tenés que saber nada de tecnología. Nosotros nos encargamos de todo y vos te ocupás de tu negocio.</p>
+    </div>
+    <div class="features">
+      <div class="feat rv"><div class="ic">🎨</div><h3>Diseño a medida</h3><p>Nada de plantillas genéricas. Tu web con tu estilo, tus colores y tus fotos.</p></div>
+      <div class="feat rv"><div class="ic">📱</div><h3>Perfecta en el celular</h3><p>La mayoría de tus clientes te va a ver desde el teléfono. Está pensada para eso primero.</p></div>
+      <div class="feat rv"><div class="ic">💬</div><h3>Contacto directo</h3><p>Botón de WhatsApp, formularios y mapa para que te escriban en un toque.</p></div>
+      <div class="feat rv"><div class="ic">🔎</div><h3>Aparecé en Google</h3><p>Configuración básica de SEO y alta en Google para que te encuentren.</p></div>
+      <div class="feat rv"><div class="ic">🌐</div><h3>Dominio y hosting</h3><p>Tu .com o .com.ar online, rápido y con candadito de seguridad (SSL).</p></div>
+      <div class="feat rv"><div class="ic">✏️</div><h3>Cambios todos los meses</h3><p>¿Cambiaron los precios o tenés una promo? Nos escribís y lo actualizamos.</p></div>
+      <div class="feat rv"><div class="ic">📊</div><h3>Estadísticas</h3><p>Sabé cuánta gente entra a tu web y desde dónde llega.</p></div>
+      <div class="feat rv"><div class="ic">🤝</div><h3>Soporte real</h3><p>Hablás con una persona, no con un bot. Respuesta en el día.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="planes" id="planes">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Planes</span>
+      <h2>Una cuota mensual. <em>Todo incluido.</em></h2>
+      <p>En vez de pagar todo junto, pagás por mes y tu web siempre está al día. Sin permanencia: si un día querés dar de baja, la das.</p>
+    </div>
+    <div class="billing rv">
+      <button class="active" data-bill="m">Mensual</button>
+      <button data-bill="y">Anual <small>2 meses gratis</small></button>
+    </div>
+    <div class="plan-grid">
+      <div class="plan rv">
+        <h3>Inicial</h3>
+        <p class="for">Para estar online y que te encuentren.</p>
+        <div class="price" data-m="25000">$25.000 <small>/mes</small></div>
+        <p class="setup">Sin costo de armado</p>
+        <ul>
+          <li>Web de 1 página (landing)</li>
+          <li>Diseño adaptado a celular</li>
+          <li>Botón de WhatsApp y mapa</li>
+          <li>Hosting y SSL incluidos</li>
+          <li>1 cambio por mes</li>
+        </ul>
+        <a href="#contacto" class="btn btn--outline" data-plan="Inicial">Elegir Inicial</a>
+      </div>
+      <div class="plan hot rv">
+        <span class="tag">El más elegido</span>
+        <h3>Negocio</h3>
+        <p class="for">Para mostrar todo lo que hacés y vender más.</p>
+        <div class="price" data-m="45000">$45.000 <small>/mes</small></div>
+        <p class="setup">Sin costo de armado</p>
+        <ul>
+          <li>Hasta 5 secciones o páginas</li>
+          <li>Galería, servicios y precios</li>
+          <li>Formulario de contacto</li>
+          <li>Dominio .com.ar incluido</li>
+          <li>Alta en Google y estadísticas</li>
+          <li>Cambios ilimitados (chicos)</li>
+        </ul>
+        <a href="#contacto" class="btn btn--gold" data-plan="Negocio">Elegir Negocio</a>
+      </div>
+      <div class="plan rv">
+        <h3>Premium</h3>
+        <p class="for">Para webs con funciones a medida.</p>
+        <div class="price" data-m="80000">$80.000 <small>/mes</small></div>
+        <p class="setup">Armado según proyecto</p>
+        <ul>
+          <li>Todo lo del plan Negocio</li>
+          <li>Reservas, turnos o catálogo</li>
+          <li>Precios en varias monedas</li>
+          <li>Área de clientes / alumnos</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="#contacto" class="btn btn--outline" data-plan="Premium">Elegir Premium</a>
+      </div>
+    </div>
+    <p class="plan-note">Precios en pesos argentinos. ¿Estás en otro país? Consultanos el valor en tu moneda.</p>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>De la idea a tu web online, <em>en 4 pasos.</em></h2>
+      <p>Igual que con nuestras invitaciones: ves tu demo funcionando antes de pagar.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Nos contás tu negocio</h3><p>Qué hacés, a quién le vendés y qué estilo te gusta. Por WhatsApp o videollamada.</p><span class="time">Día 1</span></div>
+      <div class="step rv"><h3>Te mostramos la demo</h3><p>Armamos una primera versión con tus colores y textos. La ves en tu celular, sin cargo.</p><span class="time">Días 2–5</span></div>
+      <div class="step rv"><h3>Ajustamos</h3><p>Nos decís qué cambiar y la dejamos como vos querés. Si no te convence, no pagás nada.</p><span class="time">Días 6–8</span></div>
+      <div class="step rv"><h3>¡Online!</h3><p>Publicamos con tu dominio y la seguimos actualizando todos los meses.</p><span class="time">Día 10</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap faq-wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Preguntas</span>
+      <h2>Lo que todos nos <em>preguntan.</em></h2>
+      <p>¿Te queda alguna duda? Escribinos y te respondemos en el día.</p>
+    </div>
+    <div class="rv">
+      <details open><summary>¿Por qué cuota mensual y no un pago único?</summary><p>Porque así no tenés que poner mucha plata de entrada, y además tu web nunca queda abandonada: el hosting, la seguridad y los cambios están siempre cubiertos.</p></details>
+      <details><summary>¿Hay permanencia mínima?</summary><p>No. Si querés dar de baja, nos avisás con 30 días y listo.</p></details>
+      <details><summary>¿El dominio es mío?</summary><p>Sí. El dominio (por ejemplo tunegocio.com.ar) queda registrado a tu nombre.</p></details>
+      <details><summary>¿Qué tipo de cambios puedo pedir?</summary><p>Textos, precios, fotos, promociones, horarios, nuevos servicios… Si es algo grande, como una sección nueva entera, lo charlamos aparte.</p></details>
+      <details><summary>¿Necesito tener fotos y textos?</summary><p>Ayuda, pero no es obligatorio. Te ayudamos a escribir los textos y podemos usar imágenes profesionales de bancos de fotos.</p></details>
+      <details><summary>¿Trabajan con negocios de otros países?</summary><p>Sí. Todo se hace online: charlamos por WhatsApp o videollamada y te mostramos los avances por link.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Contacto</span>
+      <h2>¿Arrancamos con <em>tu web?</em></h2>
+      <p class="lead">Contanos un poco de tu negocio y te respondemos con una propuesta. Sin compromiso.</p>
+      <div class="direct">
+        <a href="#" class="btn btn--wa" data-wa="Hola Bether! Quiero consultar por una página web.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
+          Escribinos por WhatsApp
+        </a>
+      </div>
+    </div>
+    <form id="form" class="rv">
+      <div class="row">
+        <label>Tu nombre<input name="nombre" required placeholder="Ej: Sofía"></label>
+        <label>Tu negocio<input name="negocio" required placeholder="Ej: Estética Luna"></label>
+      </div>
+      <label>Plan que te interesa
+        <select name="plan">
+          <option>Todavía no sé</option><option>Inicial</option><option>Negocio</option><option>Premium</option>
+        </select>
+      </label>
+      <label>Contanos qué necesitás<textarea name="msg" placeholder="Ej: Quiero mostrar mis servicios y que me pidan turno por WhatsApp"></textarea></label>
+      <button class="btn btn--wa" type="submit">Enviar por WhatsApp</button>
+      <small>Se abre WhatsApp con tu mensaje listo para enviar.</small>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="logo"><span>Bether<i>Studio</i></span></a>
+    <nav>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#planes">Planes</a>
+      <a href="invitaciones.html">Invitaciones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <span>© <span id="year"></span> Bether Studio · Buenos Aires</span>
+  </div>
+</footer>
+
+<a href="#" class="fab-wa" data-wa="Hola Bether! Vi su página y quiero consultar por una web." aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
 </a>
 
 <script src="js/content.js"></script>
-<script src="js/shared.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/index.js"></script>
-<script src="js/fx.js"></script>
+<script src="js/webs.js"></script>
 </body>
 </html>

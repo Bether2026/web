@@ -17,10 +17,11 @@ const navEl = document.getElementById('nav');
 if(navEl){
   const page = location.pathname.split('/').pop() || 'index.html';
   const links = [
-    { href:'index.html',     label:'Inicio'    },
-    { href:'portfolio.html', label:'Portfolio' },
-    { href:'precios.html',   label:'Precios'   },
-    { href:'contacto.html',  label:'Contacto'  }
+    { href:'index.html',        label:'Páginas web'  },
+    { href:'invitaciones.html', label:'Invitaciones' },
+    { href:'portfolio.html',    label:'Portfolio'    },
+    { href:'precios.html',      label:'Precios'      },
+    { href:'contacto.html',     label:'Contacto'     }
   ];
   const linksHTML = links.map(l=>`<li><a href="${l.href}"${page===l.href?' class="active"':''}>${l.label}</a></li>`).join('');
   navEl.innerHTML = `
@@ -86,7 +87,8 @@ if(footerEl){
       </div>
       <div class="footer__col">
         <div class="footer__col-title">Páginas</div>
-        <a href="index.html">Inicio</a>
+        <a href="index.html">Páginas web</a>
+        <a href="invitaciones.html">Invitaciones</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="precios.html">Precios</a>
         <a href="contacto.html">Contacto</a>
@@ -184,41 +186,4 @@ function initReveals(){
 initReveals();
 window.BETHER.initReveals=initReveals;
 
-})();
-
-/* ══ GATE DE ENTRADA ════════════════════════════════════════ */
-(function(){
-  const gate = document.getElementById('gate');
-  if(!gate) return;
-
-  function closeGate(mode){
-    // Guardamos la elección
-    try{ sessionStorage.setItem('bether_gate', mode); }catch(e){}
-
-    gate.classList.add('out');
-    setTimeout(()=>{ gate.style.display='none'; }, 750);
-
-    if(mode === 'salon'){
-      // Redirige al showcase de salones
-      window.open('https://bether2026.github.io/bether/', '_blank');
-    }
-    // Para 'particular' simplemente muestra la página normal
-  }
-
-  // Si ya eligió en esta sesión, no mostramos el gate
-  try{
-    const saved = sessionStorage.getItem('bether_gate');
-    if(saved){
-      gate.style.display='none';
-      return;
-    }
-  }catch(e){}
-
-  document.getElementById('gateParticular').addEventListener('click', function(){
-    closeGate('particular');
-  });
-
-  document.getElementById('gateSalon').addEventListener('click', function(){
-    closeGate('salon');
-  });
 })();

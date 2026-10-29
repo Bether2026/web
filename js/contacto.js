@@ -7,9 +7,10 @@ const ct=C.contacto;
 const cd=document.getElementById('contactoDirectos');
 if(cd) cd.innerHTML=[
   {ic:'💬',label:'WhatsApp',sub:'Respuesta en minutos →',href:B.waLink()},
-  {ic:'📸',label:'Instagram',sub:'@'+C.negocio.instagram+' →',href:'https://instagram.com/'+C.negocio.instagram},
-  {ic:'✉️',label:'Email',sub:C.negocio.email+' →',href:'mailto:'+C.negocio.email}
-].map(d=>`<a class="card contacto-directo" href="${d.href}" target="_blank" rel="noopener">
+  /* Instagram y email aparecen solo si están cargados en content.js (negocio.instagram / negocio.email) */
+  C.negocio.instagram&&{ic:'📸',label:'Instagram',sub:'@'+C.negocio.instagram+' →',href:'https://instagram.com/'+C.negocio.instagram},
+  C.negocio.email&&{ic:'✉️',label:'Email',sub:C.negocio.email+' →',href:'mailto:'+C.negocio.email}
+].filter(Boolean).map(d=>`<a class="card contacto-directo" href="${d.href}" target="_blank" rel="noopener">
   <span class="contacto-directo__ic">${d.ic}</span>
   <div><b>${d.label}</b><span>${d.sub}</span></div>
   <span class="contacto-directo__arrow">→</span>
