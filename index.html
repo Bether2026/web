@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/webs.css?v=2">
+<link rel="stylesheet" href="css/webs.css?v=3">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -31,13 +31,13 @@
       <span>Bether<i>Studio</i></span>
     </a>
     <div class="nav__links" id="navLinks">
-      <a href="#trabajos">Trabajos</a>
-      <a href="#incluye">Qué incluye</a>
-      <a href="#planes">Planes</a>
-      <a href="#proceso">Cómo trabajamos</a>
+      <a href="index.html" class="active" aria-current="page">Inicio</a>
+      <a href="trabajos.html">Trabajos</a>
+      <a href="planes.html">Planes</a>
+      <a href="empezar.html">Cómo empezar</a>
       <a href="invitaciones.html" class="nav__inv">Invitaciones ✦</a>
     </div>
-    <a href="#contacto" class="btn btn--dark">Quiero mi web</a>
+    <a href="empezar.html#contacto" class="btn btn--dark">Quiero mi web</a>
     <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -57,7 +57,7 @@
       </h1>
       <p class="lead hero__in" style="--d:.4s">Diseñamos páginas modernas, rápidas y pensadas para celular. Sin pagar una fortuna de entrada: una cuota por mes con hosting, cambios y soporte incluidos.</p>
       <div class="hero__ctas hero__in" style="--d:.5s">
-        <a href="#trabajos" class="btn btn--gold magnetic">Ver trabajos</a>
+        <a href="trabajos.html" class="btn btn--gold magnetic">Ver trabajos</a>
         <a href="#" class="btn btn--glass magnetic" data-wa="Hola Bether! Vi su página y quiero consultar por una web para mi negocio.">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
           Consultar por WhatsApp
@@ -145,37 +145,29 @@
   </div>
 </section>
 
-<section id="trabajos">
+<section class="featured" id="destacados">
   <div class="wrap">
-    <div class="section-head rv">
-      <span class="eyebrow">Portfolio</span>
-      <h2>Trabajos que ya están <em>online.</em></h2>
-      <p>Cada web es distinta porque cada negocio es distinto. Entrá, navegalas desde tu celular y fijate cómo se sienten.</p>
+    <div class="section-head section-head--row rv">
+      <div>
+        <span class="eyebrow">Portfolio</span>
+        <h2>Trabajos que ya están <em>online.</em></h2>
+      </div>
+      <a href="trabajos.html" class="btn btn--ghost">Ver todos los trabajos →</a>
     </div>
-
-    <div class="filters rv" id="filters">
-      <button class="chip active" data-f="all">Todos</button>
-      <button class="chip" data-f="educacion">Educación</button>
-      <button class="chip" data-f="eventos">Eventos</button>
-      <button class="chip" data-f="servicios">Servicios e información</button>
-    </div>
-
-    <div class="work-grid">
-      <article class="work featured rv" data-cat="educacion">
+    <div class="mini-grid">
+      <a class="work work--mini rv" href="https://www.learningtoflyacademy.com/" target="_blank" rel="noopener">
         <div class="shot">
           <span class="status">En uso</span>
           <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>learningtoflyacademy.com</span></div><img src="img/learningtofly.png" alt="Página de Learning to Fly Academy" loading="lazy"></div>
         </div>
         <div class="info">
-          <span class="cat">Academia de inglés · Argentina y España</span>
-          <h3>Learning to Fly Academy</h3>
-          <p>Web para una academia de clases individuales. Explica el método paso a paso, muestra planes con precios en pesos y euros, y lleva al alumno directo a pedir su clase de prueba.</p>
-          <div class="tags"><span>Planes y precios ARS / EUR</span><span>Adultos · Kids · Exámenes</span><span>Preguntas frecuentes</span><span>Botón de WhatsApp</span><span>Acceso alumnos</span></div>
-          <a class="live" href="https://www.learningtoflyacademy.com/" target="_blank" rel="noopener">Ver sitio en vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="cat">Academia de inglés</span>
+          <h3>Learning to Fly</h3>
+          <p>Planes en pesos y euros y clase de prueba en un clic.</p>
+          <span class="live">Ver sitio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </div>
-      </article>
-
-      <article class="work rv" data-cat="eventos">
+      </a>
+      <a class="work work--mini rv" href="https://bether2026.github.io/salon/" target="_blank" rel="noopener">
         <div class="shot">
           <span class="status demo">Demo</span>
           <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>salón bether</span></div><img src="img/salon.jpg" alt="Página del Salón Bether" loading="lazy"></div>
@@ -183,209 +175,51 @@
         <div class="info">
           <span class="cat">Salón de eventos</span>
           <h3>Salón Bether</h3>
-          <p>Estética elegante en negro y dorado para un salón de fiestas. Muestra los espacios con su capacidad, galería, testimonios e invitaciones digitales con confirmación de asistencia.</p>
-          <div class="tags"><span>Galería</span><span>Espacios y capacidad</span><span>Testimonios</span><span>Invitaciones digitales</span></div>
-          <a class="live" href="https://bether2026.github.io/salon/" target="_blank" rel="noopener">Ver demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <p>Elegancia en negro y dorado, con invitaciones digitales.</p>
+          <span class="live">Ver sitio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </div>
-      </article>
-
-      <article class="work rv" data-cat="servicios">
+      </a>
+      <a class="work work--mini rv" href="https://algrano.com.ar/" target="_blank" rel="noopener">
         <div class="shot">
           <span class="status">En uso</span>
           <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>algrano.com.ar</span></div><div class="scrollshot" role="img" aria-label="Página completa de Al Grano" style="background-image:url(img/algrano-full.jpg)"></div></div>
-          <span class="scroll-hint">Pasá el mouse ↕</span>
         </div>
         <div class="info">
-          <span class="cat">Portal de guías · Contenido</span>
+          <span class="cat">Portal de guías</span>
           <h3>Al Grano</h3>
-          <p>Portal con más de 30 guías de trámites y reclamos. Tiene buscador, categorías, lo más buscado, modo oscuro y un buscador de municipio por barrio.</p>
-          <div class="tags"><span>Buscador</span><span>+30 guías</span><span>Modo oscuro</span><span>Categorías</span></div>
-          <a class="live" href="https://algrano.com.ar/" target="_blank" rel="noopener">Ver sitio en vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <p>Más de 30 guías con buscador y modo oscuro.</p>
+          <span class="live">Ver sitio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </div>
-      </article>
-    </div>
-
-    <div class="rubros rv">
-      <h3>¿Tu rubro no está? Te armamos una muestra.</h3>
-      <p>Tocá tu rubro y pedinos una demo sin compromiso, con tu nombre y tus colores.</p>
-      <div class="rubro-grid">
-        <button class="rubro" data-rubro="un restaurante / bar"><span class="em">🍽️</span><b>Gastronomía</b><small>Carta online, reservas y pedidos por WhatsApp</small></button>
-        <button class="rubro" data-rubro="un centro de estética / peluquería"><span class="em">💇</span><b>Estética</b><small>Servicios, precios, turnos y galería de trabajos</small></button>
-        <button class="rubro" data-rubro="un gimnasio / estudio"><span class="em">🏋️</span><b>Gimnasios</b><small>Horarios, clases, planes y profes</small></button>
-        <button class="rubro" data-rubro="un consultorio / estudio profesional"><span class="em">🩺</span><b>Profesionales</b><small>Especialidades, turnos y ubicación</small></button>
-        <button class="rubro" data-rubro="un comercio / tienda"><span class="em">🛍️</span><b>Comercios</b><small>Catálogo de productos y pedidos</small></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="extra" id="tambien">
-  <div class="wrap">
-    <div class="section-head rv">
-      <span class="eyebrow">También hacemos</span>
-      <h2>Para eventos, <em>experiencias.</em></h2>
-    </div>
-    <div class="extra-grid">
-      <a href="invitaciones.html" class="extra-card rv">
-        <span class="em">🎉</span>
-        <span class="eyebrow">Invitaciones digitales</span>
-        <h3>No son solo invitaciones. Son <em>experiencias.</em></h3>
-        <p>Link con el nombre de cada invitado, mini-juego, música, confirmación en tiempo real y armado de mesas. Para cumpleaños, XV, casamientos y más.</p>
-        <span class="go">Ver invitaciones →</span>
-      </a>
-      <a href="https://bether2026.github.io/bether/" target="_blank" rel="noopener" class="extra-card extra-card--light rv">
-        <span class="em">🏛️</span>
-        <span class="eyebrow">Para salones de fiestas</span>
-        <h3>Tu salón, con <em>su propia</em> web e invitaciones.</h3>
-        <p>Una web que muestra tus espacios y la posibilidad de ofrecer invitaciones digitales con tu marca a cada cliente.</p>
-        <span class="go">Ver propuesta →</span>
       </a>
     </div>
   </div>
 </section>
 
-<section id="incluye" style="padding-top:0">
+<section class="why" id="por-que">
   <div class="wrap">
     <div class="section-head rv">
-      <span class="eyebrow">Qué incluye</span>
-      <h2>Todo lo que necesita tu web. <em>Sin vueltas.</em></h2>
-      <p>No tenés que saber nada de tecnología. Nosotros nos encargamos de todo y vos te ocupás de tu negocio.</p>
+      <span class="eyebrow">Por qué Bether</span>
+      <h2>Simple para vos. <em>Impactante</em> para tus clientes.</h2>
     </div>
-    <div class="features">
-      <div class="feat rv"><div class="ic">🎨</div><h3>Diseño a medida</h3><p>Nada de plantillas genéricas. Tu web con tu estilo, tus colores y tus fotos.</p></div>
-      <div class="feat rv"><div class="ic">📱</div><h3>Perfecta en el celular</h3><p>La mayoría de tus clientes te va a ver desde el teléfono. Está pensada para eso primero.</p></div>
-      <div class="feat rv"><div class="ic">💬</div><h3>Contacto directo</h3><p>Botón de WhatsApp, formularios y mapa para que te escriban en un toque.</p></div>
-      <div class="feat rv"><div class="ic">🔎</div><h3>Aparecé en Google</h3><p>Configuración básica de SEO y alta en Google para que te encuentren.</p></div>
-      <div class="feat rv"><div class="ic">🌐</div><h3>Dominio y hosting</h3><p>Tu .com o .com.ar online, rápido y con candadito de seguridad (SSL).</p></div>
-      <div class="feat rv"><div class="ic">✏️</div><h3>Cambios todos los meses</h3><p>¿Cambiaron los precios o tenés una promo? Nos escribís y lo actualizamos.</p></div>
-      <div class="feat rv"><div class="ic">📊</div><h3>Estadísticas</h3><p>Sabé cuánta gente entra a tu web y desde dónde llega.</p></div>
-      <div class="feat rv"><div class="ic">🤝</div><h3>Soporte real</h3><p>Hablás con una persona, no con un bot. Respuesta en el día.</p></div>
+    <div class="why-grid">
+      <div class="why-item rv"><span class="why-n">01</span><h3>Diseño a medida</h3><p>Nada de plantillas. Tu web con tu estilo y pensada primero para el celular, que es donde te buscan.</p></div>
+      <div class="why-item rv"><span class="why-n">02</span><h3>Todo incluido, por mes</h3><p>Hosting, dominio, cambios y soporte en una sola cuota desde $25.000. Sin permanencia.</p><a href="planes.html" class="why-link">Ver planes →</a></div>
+      <div class="why-item rv"><span class="why-n">03</span><h3>Ves la demo antes de pagar</h3><p>Te armamos una primera versión sin cargo. Si no te convence, no pagás nada.</p><a href="empezar.html" class="why-link">Cómo empezar →</a></div>
     </div>
   </div>
 </section>
 
-<section class="planes" id="planes">
+<section class="cta-band">
   <div class="wrap">
-    <div class="section-head rv">
-      <span class="eyebrow">Planes</span>
-      <h2>Una cuota mensual. <em>Todo incluido.</em></h2>
-      <p>En vez de pagar todo junto, pagás por mes y tu web siempre está al día. Sin permanencia: si un día querés dar de baja, la das.</p>
-    </div>
-    <div class="billing rv">
-      <button class="active" data-bill="m">Mensual</button>
-      <button data-bill="y">Anual <small>2 meses gratis</small></button>
-    </div>
-    <div class="plan-grid">
-      <div class="plan rv">
-        <h3>Inicial</h3>
-        <p class="for">Para estar online y que te encuentren.</p>
-        <div class="price" data-m="25000">$25.000 <small>/mes</small></div>
-        <p class="setup">Sin costo de armado</p>
-        <ul>
-          <li>Web de 1 página (landing)</li>
-          <li>Diseño adaptado a celular</li>
-          <li>Botón de WhatsApp y mapa</li>
-          <li>Hosting y SSL incluidos</li>
-          <li>1 cambio por mes</li>
-        </ul>
-        <a href="#contacto" class="btn btn--outline" data-plan="Inicial">Elegir Inicial</a>
-      </div>
-      <div class="plan hot rv">
-        <span class="tag">El más elegido</span>
-        <h3>Negocio</h3>
-        <p class="for">Para mostrar todo lo que hacés y vender más.</p>
-        <div class="price" data-m="45000">$45.000 <small>/mes</small></div>
-        <p class="setup">Sin costo de armado</p>
-        <ul>
-          <li>Hasta 5 secciones o páginas</li>
-          <li>Galería, servicios y precios</li>
-          <li>Formulario de contacto</li>
-          <li>Dominio .com.ar incluido</li>
-          <li>Alta en Google y estadísticas</li>
-          <li>Cambios ilimitados (chicos)</li>
-        </ul>
-        <a href="#contacto" class="btn btn--gold" data-plan="Negocio">Elegir Negocio</a>
-      </div>
-      <div class="plan rv">
-        <h3>Premium</h3>
-        <p class="for">Para webs con funciones a medida.</p>
-        <div class="price" data-m="80000">$80.000 <small>/mes</small></div>
-        <p class="setup">Armado según proyecto</p>
-        <ul>
-          <li>Todo lo del plan Negocio</li>
-          <li>Reservas, turnos o catálogo</li>
-          <li>Precios en varias monedas</li>
-          <li>Área de clientes / alumnos</li>
-          <li>Soporte prioritario</li>
-        </ul>
-        <a href="#contacto" class="btn btn--outline" data-plan="Premium">Elegir Premium</a>
-      </div>
-    </div>
-    <p class="plan-note">Precios en pesos argentinos. ¿Estás en otro país? Consultanos el valor en tu moneda.</p>
-  </div>
-</section>
-
-<section id="proceso">
-  <div class="wrap">
-    <div class="section-head rv">
-      <span class="eyebrow">Cómo trabajamos</span>
-      <h2>De la idea a tu web online, <em>en 4 pasos.</em></h2>
-      <p>Igual que con nuestras invitaciones: ves tu demo funcionando antes de pagar.</p>
-    </div>
-    <div class="steps">
-      <div class="step rv"><h3>Nos contás tu negocio</h3><p>Qué hacés, a quién le vendés y qué estilo te gusta. Por WhatsApp o videollamada.</p><span class="time">Día 1</span></div>
-      <div class="step rv"><h3>Te mostramos la demo</h3><p>Armamos una primera versión con tus colores y textos. La ves en tu celular, sin cargo.</p><span class="time">Días 2–5</span></div>
-      <div class="step rv"><h3>Ajustamos</h3><p>Nos decís qué cambiar y la dejamos como vos querés. Si no te convence, no pagás nada.</p><span class="time">Días 6–8</span></div>
-      <div class="step rv"><h3>¡Online!</h3><p>Publicamos con tu dominio y la seguimos actualizando todos los meses.</p><span class="time">Día 10</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" style="padding-top:0">
-  <div class="wrap faq-wrap">
-    <div class="section-head rv">
-      <span class="eyebrow">Preguntas</span>
-      <h2>Lo que todos nos <em>preguntan.</em></h2>
-      <p>¿Te queda alguna duda? Escribinos y te respondemos en el día.</p>
-    </div>
-    <div class="rv">
-      <details open><summary>¿Por qué cuota mensual y no un pago único?</summary><p>Porque así no tenés que poner mucha plata de entrada, y además tu web nunca queda abandonada: el hosting, la seguridad y los cambios están siempre cubiertos.</p></details>
-      <details><summary>¿Hay permanencia mínima?</summary><p>No. Si querés dar de baja, nos avisás con 30 días y listo.</p></details>
-      <details><summary>¿El dominio es mío?</summary><p>Sí. El dominio (por ejemplo tunegocio.com.ar) queda registrado a tu nombre.</p></details>
-      <details><summary>¿Qué tipo de cambios puedo pedir?</summary><p>Textos, precios, fotos, promociones, horarios, nuevos servicios… Si es algo grande, como una sección nueva entera, lo charlamos aparte.</p></details>
-      <details><summary>¿Necesito tener fotos y textos?</summary><p>Ayuda, pero no es obligatorio. Te ayudamos a escribir los textos y podemos usar imágenes profesionales de bancos de fotos.</p></details>
-      <details><summary>¿Trabajan con negocios de otros países?</summary><p>Sí. Todo se hace online: charlamos por WhatsApp o videollamada y te mostramos los avances por link.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contacto">
-  <div class="wrap">
-    <div class="rv">
-      <span class="eyebrow">Contacto</span>
+    <div class="cta-band__box rv">
+      <span class="eyebrow">Hablemos</span>
       <h2>¿Arrancamos con <em>tu web?</em></h2>
-      <p class="lead">Contanos un poco de tu negocio y te respondemos con una propuesta. Sin compromiso.</p>
-      <div class="direct">
-        <a href="#" class="btn btn--wa" data-wa="Hola Bether! Quiero consultar por una página web.">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
-          Escribinos por WhatsApp
-        </a>
+      <p>Contanos de tu negocio y te mostramos una demo sin cargo. Si no te convence, no pagás nada.</p>
+      <div class="cta-band__btns">
+        <a href="empezar.html" class="btn btn--gold">Cómo empezar</a>
+        <a href="#" class="btn btn--glass" data-wa="Hola Bether! Quiero consultar por una página web."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg> WhatsApp</a>
       </div>
     </div>
-    <form id="form" class="rv">
-      <div class="row">
-        <label>Tu nombre<input name="nombre" required placeholder="Ej: Sofía"></label>
-        <label>Tu negocio<input name="negocio" required placeholder="Ej: Estética Luna"></label>
-      </div>
-      <label>Plan que te interesa
-        <select name="plan">
-          <option>Todavía no sé</option><option>Inicial</option><option>Negocio</option><option>Premium</option>
-        </select>
-      </label>
-      <label>Contanos qué necesitás<textarea name="msg" placeholder="Ej: Quiero mostrar mis servicios y que me pidan turno por WhatsApp"></textarea></label>
-      <button class="btn btn--wa" type="submit">Enviar por WhatsApp</button>
-      <small>Se abre WhatsApp con tu mensaje listo para enviar.</small>
-    </form>
   </div>
 </section>
 
@@ -393,10 +227,11 @@
   <div class="wrap">
     <a href="index.html" class="logo"><span>Bether<i>Studio</i></span></a>
     <nav>
-      <a href="#trabajos">Trabajos</a>
-      <a href="#planes">Planes</a>
+      <a href="index.html">Inicio</a>
+      <a href="trabajos.html">Trabajos</a>
+      <a href="planes.html">Planes</a>
+      <a href="empezar.html">Cómo empezar</a>
       <a href="invitaciones.html">Invitaciones</a>
-      <a href="#contacto">Contacto</a>
     </nav>
     <span>© <span id="year"></span> Bether Studio · Buenos Aires</span>
   </div>
@@ -407,6 +242,6 @@
 </a>
 
 <script src="js/content.js"></script>
-<script src="js/webs.js?v=2"></script>
+<script src="js/webs.js?v=3"></script>
 </body>
 </html>

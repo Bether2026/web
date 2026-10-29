@@ -1,5 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
-   BETHER STUDIO · WEBS.JS (portada de páginas web)
+   BETHER STUDIO · WEBS.JS (páginas de la sección web)
+   Lo usan index, trabajos, planes y empezar: cada bloque se
+   activa solo si su elemento existe en la página.
    El número de WhatsApp sale de content.js (negocio.whatsapp).
 ═══════════════════════════════════════════════════════════ */
 (function(){
@@ -29,6 +31,9 @@ document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',(
   nav.classList.remove('open'); burger.setAttribute('aria-expanded','false');
 }));
 
+/* Si se llega con #ancla desde otra página, asegurar el salto cuando termina de cargar */
+if(location.hash.length>1) addEventListener('load',()=>{ const t=document.getElementById(location.hash.slice(1)); if(t) t.scrollIntoView(); });
+
 /* Reveals */
 const rvs=document.querySelectorAll('.rv');
 if(!('IntersectionObserver' in window)){ rvs.forEach(el=>el.classList.add('in')); }
@@ -40,7 +45,8 @@ else{
 }
 
 /* Filtros del portfolio */
-document.getElementById('filters').addEventListener('click',e=>{
+const filters=document.getElementById('filters');
+if(filters) filters.addEventListener('click',e=>{
   const chip=e.target.closest('.chip'); if(!chip) return;
   document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c===chip));
   const f=chip.dataset.f;
@@ -66,10 +72,10 @@ document.querySelectorAll('.billing button').forEach(b=>b.addEventListener('clic
   });
 }));
 
-/* Botones de plan: preseleccionan el plan en el formulario */
-document.querySelectorAll('[data-plan]').forEach(a=>a.addEventListener('click',()=>{
-  document.querySelector('select[name=plan]').value=a.dataset.plan;
-}));
+/* Los botones de plan llegan con ?plan=… y lo preseleccionan en el formulario */
+const planSel=document.querySelector('select[name=plan]');
+const planQ=new URLSearchParams(location.search).get('plan');
+if(planSel&&planQ&&[...planSel.options].some(o=>o.value===planQ)) planSel.value=planQ;
 
 /* ══ EFECTOS "WOW" ══════════════════════════════════════════ */
 const REDUCED=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -130,14 +136,14 @@ if(cv&&!REDUCED){
 /* Luz que sigue al mouse + escena 3D que se inclina */
 const spot=document.getElementById('heroSpot'), deck=document.getElementById('deck');
 if(FINE&&!REDUCED){
-  hero.addEventListener('pointermove',e=>{
+  if(deck) hero.addEventListener('pointermove',e=>{
     const r=hero.getBoundingClientRect();
     spot.style.left=(e.clientX-r.left)+'px'; spot.style.top=(e.clientY-r.top)+'px';
     const px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
     deck.style.setProperty('--ry',(-16+px*16)+'deg');
     deck.style.setProperty('--rx',(10-py*12)+'deg');
   },{passive:true});
-  hero.addEventListener('pointerleave',()=>{ deck.style.removeProperty('--ry'); deck.style.removeProperty('--rx'); });
+  if(deck) hero.addEventListener('pointerleave',()=>{ deck.style.removeProperty('--ry'); deck.style.removeProperty('--rx'); });
 
   /* Botones magnéticos */
   document.querySelectorAll('.magnetic').forEach(b=>{
@@ -225,7 +231,8 @@ if(ba){
 }
 
 /* Formulario -> WhatsApp */
-document.getElementById('form').addEventListener('submit',e=>{
+const form=document.getElementById('form');
+if(form) form.addEventListener('submit',e=>{
   e.preventDefault();
   const d=new FormData(e.target);
   const text=`Hola Bether! Soy ${d.get('nombre')}, de ${d.get('negocio')}.\nQuiero una página web. Plan: ${d.get('plan')}.\n${d.get('msg')||''}`.trim();
