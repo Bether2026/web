@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bether-studio.com/sitemap.xml
