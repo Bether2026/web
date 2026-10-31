@@ -26,7 +26,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/webs.css?v=3">
+<link rel="stylesheet" href="css/webs.css?v=5">
+<link rel="stylesheet" href="css/movil.css?v=1">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -65,7 +66,7 @@
         <span class="ln"><span class="hero__in" style="--d:.18s">con una web que</span></span>
         <span class="ln ln--rot"><span class="hero__in" style="--d:.28s"><em class="rotator" id="rotator" data-words="vende.|enamora.|te trae clientes.|trabaja por vos.">vende.</em></span></span>
       </h1>
-      <p class="lead hero__in" style="--d:.4s">Diseñamos páginas modernas, rápidas y pensadas para celular. Sin pagar una fortuna de entrada: una cuota por mes con hosting, cambios y soporte incluidos.</p>
+      <p class="lead hero__in" style="--d:.4s">Diseñamos páginas modernas, rápidas y pensadas para celular.<span class="d-only"> Sin pagar una fortuna de entrada: una cuota por mes con hosting, cambios y soporte incluidos.</span><span class="m-only"> Una cuota por mes, todo incluido.</span></p>
       <div class="hero__ctas hero__in" style="--d:.5s">
         <a href="trabajos.html" class="btn btn--gold magnetic">Ver trabajos</a>
         <a href="#" class="btn btn--glass magnetic" data-wa="Hola Bether! Vi su página y quiero consultar por una web para mi negocio.">
@@ -74,6 +75,20 @@
         </a>
       </div>
       <div class="checks hero__in" style="--d:.6s"><span>Demo gratis antes de pagar</span><span>Sin permanencia</span><span>Dominio a tu nombre</span></div>
+    </div>
+    <div class="mshow hero__in" style="--d:.35s" aria-hidden="true">
+      <div class="mphone">
+        <div class="mphone__screen" id="mshow">
+          <img src="img/m/learningtofly.jpg" alt="" class="on" data-name="Learning to Fly" data-tag="En uso">
+          <img src="img/m/algrano.jpg" alt="" data-name="Al Grano" data-tag="En uso" loading="lazy">
+          <img src="img/m/tienda.jpg" alt="" data-name="Yerba &amp; Barro" data-tag="Demo · tienda" loading="lazy">
+          <img src="img/m/martillero.jpg" alt="" data-name="Ignacio Ferrán" data-tag="Demo · profesional" loading="lazy">
+        </div>
+        <span class="mphone__notch"></span>
+      </div>
+      <div class="mshow__toast"><span class="ic">💬</span><div><b>Nueva consulta</b><small>desde tu web</small></div></div>
+      <div class="mshow__cap"><span class="live"></span><b id="mshowName">Learning to Fly</b><small id="mshowTag">En uso</small></div>
+      <div class="mshow__dots" id="mshowDots"><i class="on"></i><i></i><i></i><i></i></div>
     </div>
     <div class="scene hero__in" style="--d:.3s" id="scene" aria-hidden="true">
       <div class="deck" id="deck">
@@ -151,6 +166,7 @@
         <div class="ba__handle" id="baHandle" role="slider" tabindex="0" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span>‹ ›</span></div>
       </div>
     </div>
+    <div class="ba__switch" role="group" aria-label="Ver antes o después"><button type="button" data-ba="before">Antes</button><button type="button" data-ba="after" class="on">Con Bether</button></div>
     <p class="ba__note">Ejemplo ilustrativo.</p>
   </div>
 </section>
@@ -164,11 +180,11 @@
       </div>
       <a href="trabajos.html" class="btn btn--ghost">Ver todos los trabajos →</a>
     </div>
-    <div class="mini-grid">
+    <div class="mini-grid" data-carousel>
       <a class="work work--mini rv" href="https://www.learningtoflyacademy.com/" target="_blank" rel="noopener">
         <div class="shot">
           <span class="status">En uso</span>
-          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>learningtoflyacademy.com</span></div><img src="img/learningtofly.jpg" alt="Página de Learning to Fly Academy" loading="lazy"></div>
+          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>learningtoflyacademy.com</span></div><picture><source media="(max-width:760px)" srcset="img/m/learningtofly.jpg"><img src="img/learningtofly.jpg" alt="Página de Learning to Fly Academy" loading="lazy"></picture></div>
         </div>
         <div class="info">
           <span class="cat">Academia de inglés</span>
@@ -211,7 +227,7 @@
       <span class="eyebrow">Por qué Bether</span>
       <h2>Simple para vos. <em>Impactante</em> para tus clientes.</h2>
     </div>
-    <div class="why-grid">
+    <div class="why-grid" data-carousel>
       <div class="why-item rv"><span class="why-n">01</span><h3>Diseño a medida</h3><p>Nada de plantillas. Tu web con tu estilo y pensada primero para el celular, que es donde te buscan.</p></div>
       <div class="why-item rv"><span class="why-n">02</span><h3>Todo incluido, por mes</h3><p>Hosting, dominio, cambios y soporte en una sola cuota desde $25.000. Sin permanencia.</p><a href="planes.html" class="why-link">Ver planes →</a></div>
       <div class="why-item rv"><span class="why-n">03</span><h3>Ves la demo antes de pagar</h3><p>Te armamos una primera versión sin cargo. Si no te convence, no pagás nada.</p><a href="empezar.html" class="why-link">Cómo empezar →</a></div>
@@ -247,11 +263,19 @@
   </div>
 </footer>
 
+<nav class="tabbar" aria-label="Navegación rápida">
+  <a href="index.html" class="on" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></a>
+  <a href="trabajos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Trabajos</span></a>
+  <a href="#" class="tabbar__wa" data-wa="Hola Bether! Quiero consultar por una página web."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg><span>WhatsApp</span></a>
+  <a href="planes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg><span>Planes</span></a>
+  <a href="empezar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c1-4 4-7 8-9l2-6 5 5-6 2c-2 4-5 7-9 8z"/><path d="M9 15l-3 3"/></svg><span>Empezar</span></a>
+</nav>
+
 <a href="#" class="fab-wa" data-wa="Hola Bether! Vi su página y quiero consultar por una web." aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 0 1-5.2-1.5L3 22l1.5-3.7A10 10 0 1 1 12 22Z"/></svg>
 </a>
 
 <script src="js/content.js"></script>
-<script src="js/webs.js?v=3"></script>
+<script src="js/webs.js?v=5"></script>
 </body>
 </html>

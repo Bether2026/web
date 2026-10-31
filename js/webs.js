@@ -217,7 +217,7 @@ if(ba){
     if(e.key==='ArrowRight'){ set(v+5); e.preventDefault(); }
   });
   /* Al aparecer, la línea hace un barrido para mostrar que se puede arrastrar */
-  if(!REDUCED) new IntersectionObserver(([e],o)=>{
+  if(!REDUCED&&!matchMedia('(max-width:760px)').matches) new IntersectionObserver(([e],o)=>{
     if(!e.isIntersecting) return; o.disconnect();
     const t0=performance.now(), keys=[[0,50],[700,82],[1500,18],[2200,50]];
     (function step(now){
@@ -238,5 +238,58 @@ if(form) form.addEventListener('submit',e=>{
   const text=`Hola Bether! Soy ${d.get('nombre')}, de ${d.get('negocio')}.\nQuiero una página web. Plan: ${d.get('plan')}.\n${d.get('msg')||''}`.trim();
   open(waLink(text),'_blank');
 });
+
+/* ══ CELULAR ════════════════════════════════════════════════ */
+const MOBILE=matchMedia('(max-width:760px)');
+
+/* Hero: el celular va pasando por webs reales */
+const mshow=document.getElementById('mshow');
+if(mshow){
+  const imgs=[...mshow.querySelectorAll('img')], dots=[...document.querySelectorAll('#mshowDots i')];
+  const name=document.getElementById('mshowName'), tag=document.getElementById('mshowTag'), cap=name.parentElement;
+  let i=0;
+  const show=n=>{
+    imgs[i].classList.remove('on'); dots[i].classList.remove('on');
+    i=n; imgs[i].classList.add('on'); dots[i].classList.add('on');
+    name.textContent=imgs[i].dataset.name; tag.textContent=imgs[i].dataset.tag;
+    cap.classList.toggle('demo',/demo/i.test(imgs[i].dataset.tag));
+  };
+  if(!REDUCED) setInterval(()=>{ if(MOBILE.matches&&!document.hidden) show((i+1)%imgs.length); },3200);
+}
+
+/* Carruseles: puntitos que siguen al dedo; el de planes arranca en el recomendado */
+document.querySelectorAll('[data-carousel]').forEach(c=>{
+  const items=[...c.children], dots=document.createElement('div');
+  dots.className='cdots'; dots.setAttribute('aria-hidden','true');
+  dots.innerHTML=items.map(()=>'<i></i>').join('');
+  c.after(dots);
+  const sync=()=>{
+    const mid=c.scrollLeft+c.clientWidth/2;
+    let best=0, dist=Infinity;
+    items.forEach((el,k)=>{ const d=Math.abs(el.offsetLeft+el.offsetWidth/2-mid); if(d<dist){ dist=d; best=k; } });
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===best));
+  };
+  c.addEventListener('scroll',()=>requestAnimationFrame(sync),{passive:true});
+  const hot=c.querySelector('.hot');
+  const start=()=>{ if(MOBILE.matches&&hot) c.scrollLeft=hot.offsetLeft-(c.clientWidth-hot.offsetWidth)/2; sync(); };
+  start(); addEventListener('load',start);
+});
+
+/* Antes / después con botón */
+const baSw=document.querySelector('.ba__switch');
+if(ba&&baSw){
+  const btns=[...baSw.querySelectorAll('button')];
+  let auto=true;
+  const pick=w=>{ ba.style.setProperty('--pos',w==='after'?'100%':'0%'); btns.forEach(b=>b.classList.toggle('on',b.dataset.ba===w)); };
+  btns.forEach(b=>b.addEventListener('click',()=>{ auto=false; pick(b.dataset.ba); }));
+  /* Al aparecer arranca en "Antes" y a los segundos se transforma solo */
+  if(MOBILE.matches){
+    pick('before');
+    new IntersectionObserver(([e],o)=>{
+      if(!e.isIntersecting) return; o.disconnect();
+      setTimeout(()=>{ if(auto) pick('after'); },1200);
+    },{threshold:.6}).observe(ba);
+  }
+}
 
 })();

@@ -453,7 +453,7 @@ footer nav a:hover{color:var(--ink)}
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
-  .js .rv{opacity:1;transform:none}
+  .js .rv,.js .hero__in,.js .hero__title .hero__in,.js .page-hero__title .hero__in{opacity:1!important;transform:none!important;filter:none!important}
 }
 
 /* RESPONSIVE */

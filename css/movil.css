@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════════════════════
+   Bether Studio · capa para celular
+   Todo lo de acá aplica solo en pantallas chicas (≤760px).
+   En la computadora estos elementos quedan ocultos.
+   ═══════════════════════════════════════════════════════════ */
+.mshow,.tabbar,.ba__switch,.m-only,.cdots{display:none}
+
+@media (max-width:760px){
+  .d-only{display:none}
+  .m-only{display:inline}
+
+  /* ── HERO: un celular mostrando webs reales ── */
+  .hero{padding:104px 0 56px}
+  .hero .wrap{gap:0}
+  .hero__copy{text-align:center;display:flex;flex-direction:column;align-items:center}
+  .hero__title{font-size:clamp(38px,11vw,50px)}
+  .hero .lead{font-size:17px;max-width:30ch;margin-inline:auto}
+  .hero__ctas{margin:26px 0 0;width:100%}
+  .hero__ctas .btn--glass,.checks,.scene{display:none}
+  .mshow{display:block;position:relative;width:100%;max-width:340px;margin:38px auto 0;padding-bottom:4px}
+  .mphone{position:relative;width:min(62vw,228px);aspect-ratio:460/995;margin:0 auto;border-radius:34px;padding:7px;
+    background:linear-gradient(150deg,#3a3a46,#121218 40%,#26262f);
+    box-shadow:0 0 0 1px rgba(255,255,255,.1),0 40px 70px -24px rgba(0,0,0,.95),0 0 90px -20px rgba(212,165,116,.55);
+    transform:rotate(-3deg);animation:mfloat 6s ease-in-out infinite}
+  @keyframes mfloat{50%{transform:rotate(-3deg) translateY(-8px)}}
+  .mphone__screen{position:relative;width:100%;height:100%;border-radius:27px;overflow:hidden;background:#fff}
+  .mphone__screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transform:scale(1.04);transition:opacity .8s ease,transform 3.6s ease}
+  .mphone__screen img.on{opacity:1;transform:none}
+  .mphone__notch{position:absolute;top:14px;left:50%;width:30%;height:17px;margin-left:-15%;border-radius:99px;background:#0a0a0f}
+  .mshow__toast{position:absolute;left:0;top:22%;z-index:2;display:flex;align-items:center;gap:8px;padding:8px 13px 8px 8px;border-radius:14px;text-align:left;
+    background:rgba(255,255,255,.96);color:var(--ink);box-shadow:0 18px 34px -12px rgba(0,0,0,.7);animation:mtoast 6s ease-in-out infinite}
+  .mshow__toast .ic{width:30px;height:30px;border-radius:9px;background:var(--wa);display:grid;place-items:center;font-size:14px}
+  .mshow__toast b{display:block;font-size:12px;line-height:1.2}
+  .mshow__toast small{font-size:10.5px;color:var(--ink-3)}
+  @keyframes mtoast{0%,12%{opacity:0;transform:translateY(10px) scale(.92)}20%,80%{opacity:1;transform:none}90%,100%{opacity:0;transform:translateY(-6px)}}
+  .mshow__cap{position:absolute;right:0;bottom:22%;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:9px 14px 9px 26px;border-radius:14px;text-align:left;
+    background:rgba(22,22,31,.78);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 18px 34px -12px rgba(0,0,0,.8)}
+  .mshow__cap b{font-size:13px;color:#fff;line-height:1.2}
+  .mshow__cap small{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-2)}
+  .mshow__cap .live{position:absolute;left:11px;top:15px;width:7px;height:7px;border-radius:50%;background:#20c35a;box-shadow:0 0 0 3px rgba(32,195,90,.25)}
+  .mshow__cap.demo .live{background:#f2a516;box-shadow:0 0 0 3px rgba(242,165,22,.25)}
+  .mshow__dots{display:flex;justify-content:center;gap:6px;margin-top:22px}
+  .mshow__dots i{width:6px;height:6px;border-radius:99px;background:rgba(255,255,255,.25);transition:width .4s var(--ease),background .4s}
+  .mshow__dots i.on{width:20px;background:var(--gold-2)}
+
+  /* ── Barra fija abajo, como una app ── */
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+  .fab-wa{display:none}
+  .tabbar{display:grid;grid-template-columns:repeat(5,1fr);align-items:end;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:70;
+    padding:8px 6px 7px;border-radius:22px;background:rgba(14,14,20,.88);border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 20px 40px -14px rgba(0,0,0,.65)}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;font-weight:700;color:rgba(255,255,255,.55);-webkit-tap-highlight-color:transparent}
+  .tabbar svg{width:22px;height:22px}
+  .tabbar a.on{color:var(--gold-2)}
+  .tabbar a:active{transform:scale(.92)}
+  .tabbar .tabbar__wa{color:#fff}
+  .tabbar .tabbar__wa svg{width:50px;height:50px;padding:12px;margin-top:-26px;border-radius:50%;background:var(--wa);border:4px solid #0e0e14;box-shadow:0 10px 22px -6px rgba(37,211,102,.75)}
+
+  /* ── Carruseles que se deslizan con el dedo ── */
+  [data-carousel]{display:flex!important;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    margin:0 -20px;padding:14px 20px 8px;scroll-padding:0 20px}
+  [data-carousel]::-webkit-scrollbar{display:none}
+  [data-carousel]>*{flex:0 0 84%;scroll-snap-align:center;grid-column:auto!important}
+  .cdots{display:flex;justify-content:center;gap:6px;margin-top:16px}
+  .cdots i{width:6px;height:6px;border-radius:99px;background:var(--line);transition:width .35s var(--ease),background .35s}
+  .cdots i.on{width:20px;background:var(--gold-ink)}
+  .planes .cdots i{background:rgba(255,255,255,.2)}
+  .planes .cdots i.on{background:var(--gold-2)}
+  .plan-grid[data-carousel]{max-width:none;align-items:stretch}
+  .plan-grid[data-carousel]>.plan{flex-basis:86%;padding:28px 24px}
+  .plan.hot{transform:none}
+  .why-grid[data-carousel]>.why-item{padding:28px 24px}
+
+  /* ── Trabajos: capturas tomadas desde un celular ── */
+  .shot{padding:22px 0 0;display:flex;justify-content:center;background:radial-gradient(70% 90% at 50% 100%,#e6d6bf,#efe9de 70%)}
+  .shot .browser{width:62%;max-width:240px;border-radius:24px 24px 0 0;border:6px solid #15151c;border-bottom:0;box-shadow:0 18px 30px -16px rgba(0,0,0,.55)}
+  .shot .browser__bar{display:none}
+  .shot .browser img{display:block;width:100%;aspect-ratio:460/600;object-fit:cover;object-position:top}
+  .work:hover .shot .browser img{transform:none}
+  .shot .scrollshot{aspect-ratio:460/600;background-image:url(../img/m/algrano.jpg)!important;background-size:100% auto}
+  .status{top:14px;right:14px}
+  .work--mini .status{top:14px;right:14px}
+  .work{transform:none}
+
+  /* ── Antes / después: un botón en vez de arrastrar ── */
+  .ba__bar span{font-size:11px}
+  .ba__view{aspect-ratio:3/4;cursor:default}
+  .ba__handle,.ba__tag{display:none}
+  .ba__before{transition:clip-path .7s var(--ease)}
+  .ba__switch{display:flex;width:max-content;margin:18px auto 0;padding:4px;border-radius:99px;background:var(--surface);border:1px solid var(--line);box-shadow:0 10px 24px -14px rgba(20,16,10,.4)}
+  .ba__switch button{font:inherit;font-size:14px;font-weight:700;border:0;background:none;color:var(--ink-2);padding:10px 20px;border-radius:99px;cursor:pointer;transition:background .3s,color .3s}
+  .ba__switch button.on{background:var(--night);color:var(--gold-2)}
+  .ba__after{font-size:12px}
+  .lu-nav{padding:1.4em 1.5em}
+  .lu-nav a{padding:.6em 1.1em}
+  .lu-hero{grid-template-columns:1fr;padding:0 1.5em;gap:1em;text-align:left}
+  .lu-hero h3{font-size:2.6em}
+  .lu-orb{position:absolute;right:-2.5em;top:5.5em;width:8em;opacity:.55;z-index:-1}
+  .ba__after{isolation:isolate}
+  .lu-cards{grid-template-columns:1fr 1fr;padding:1.2em 1.5em 1.6em;gap:.7em}
+  .lu-cards div:nth-child(3){display:none}
+  .lu-wa{right:1.2em;bottom:1.2em}
+  .old{font-size:11px;padding:3%}
+  .old__row{flex-direction:column;gap:.6em}
+  .old__menu{width:auto;flex-direction:row;flex-wrap:wrap;gap:.3em .9em;padding:.5em}
+}
+
+@media (max-width:760px) and (prefers-reduced-motion:reduce){
+  .mphone{transform:rotate(-3deg)}
+}
