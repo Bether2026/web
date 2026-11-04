@@ -52,7 +52,7 @@ if(filters) filters.addEventListener('click',e=>{
   const f=chip.dataset.f;
   document.querySelectorAll('.work').forEach(w=>{
     w.style.display=(f==='all'||w.dataset.cat===f)?'':'none';
-    w.classList.toggle('featured',f==='all'&&w.dataset.cat==='educacion');
+    w.classList.toggle('featured',f==='all'&&(w.dataset.cat==='educacion'||w.dataset.cat==='turnos'));
   });
 });
 
