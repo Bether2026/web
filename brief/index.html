@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Brief · Bether Studio</title>
+<meta name="theme-color" content="#0a0a0f">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0a0a0f;--night2:#14141c;--card:rgba(255,255,255,.045);--line:rgba(230,192,138,.18);--line2:rgba(230,192,138,.42);
+  --gold:#d4a574;--gold2:#e6c08a;--gold3:#f1d8a8;--ink:#f4efe6;--muted:#a9a3b3;--err:#ff7a7a;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{min-height:100svh;font-family:var(--sans);color:var(--ink);background:var(--night);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(60% 40% at 85% 0,rgba(212,165,116,.18),transparent 70%),radial-gradient(50% 40% at 0 100%,rgba(120,90,200,.12),transparent 70%),linear-gradient(180deg,#0d0d14,#0a0a0f)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{width:min(760px,100% - 32px);margin:0 auto}
+.gold{background:linear-gradient(100deg,#b8875a,#f1d8a8 45%,#d4a574 70%,#f6e3bd);-webkit-background-clip:text;background-clip:text;color:transparent}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+
+/* barra superior */
+header{position:sticky;top:0;z-index:20;background:rgba(10,10,15,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand svg{width:34px;height:34px}
+.brand b{font-family:var(--serif);font-size:1.25rem;font-weight:600;letter-spacing:.02em}
+.step-of{font-size:.8rem;font-weight:700;color:var(--muted);letter-spacing:.06em}
+.progress{height:3px;background:rgba(255,255,255,.06)}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold3));box-shadow:0 0 14px rgba(230,192,138,.6);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+
+/* pantallas */
+main{padding:clamp(28px,6vw,56px) 0 120px}
+.screen{display:none;animation:in .55s cubic-bezier(.2,.8,.2,1)}
+.screen.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2)}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,9vw,4.4rem);line-height:.98;letter-spacing:-.01em;margin-top:16px}
+h1 em,h2 em{font-style:italic}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,7vw,3rem);line-height:1.02;margin-top:12px}
+.lead{color:var(--muted);font-size:1.05rem;line-height:1.6;margin-top:16px;max-width:600px}
+
+/* portada */
+.hero-card{margin-top:30px;padding:22px;border-radius:22px;border:1px solid var(--line);background:var(--card);display:grid;gap:14px}
+.hero-card .for{font-size:.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.hero-card .who{font-family:var(--serif);font-size:1.6rem;font-weight:600;line-height:1.1}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+.facts div{padding:12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);font-size:.82rem;color:var(--muted);line-height:1.3}
+.facts b{display:block;color:var(--ink);font-size:1rem;margin-bottom:2px}
+.sections{margin-top:26px;display:grid;gap:8px;counter-reset:s}
+.sections li{list-style:none;display:flex;align-items:center;gap:14px;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.06);font-weight:600}
+.sections li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:1.25rem;color:var(--gold2);width:30px}
+
+/* preguntas */
+.q{margin-top:28px;padding:22px;border-radius:22px;border:1px solid var(--line);background:var(--card);transition:border-color .3s,background .3s}
+.q:focus-within{border-color:var(--line2);background:rgba(255,255,255,.06)}
+.q.bad{border-color:rgba(255,122,122,.6)}
+.q label.t,.q .t{display:block;font-weight:700;font-size:1.04rem;line-height:1.4}
+.q .t .opt{font-weight:600;font-size:.78rem;color:var(--muted);margin-left:6px}
+.q .help{display:block;color:var(--muted);font-size:.88rem;line-height:1.45;margin-top:6px}
+.q input[type=text],.q input[type=email],.q input[type=tel],.q textarea{width:100%;margin-top:14px;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.28);color:var(--ink);font:500 1rem/1.5 var(--sans);outline:none;transition:border-color .2s,box-shadow .2s}
+.q textarea{min-height:110px;resize:vertical}
+.q input:focus,.q textarea:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(212,165,116,.15)}
+.q ::placeholder{color:#6f6a78}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.chip{padding:11px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);font-weight:600;font-size:.92rem;transition:all .2s;user-select:none}
+.chip:hover{border-color:var(--line2)}
+.chip[aria-pressed=true]{background:linear-gradient(135deg,var(--gold3),var(--gold));color:#1d1408;border-color:transparent;box-shadow:0 8px 20px -10px rgba(212,165,116,.8)}
+.cards{display:grid;gap:10px;margin-top:14px}
+.card{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);font-weight:600;transition:all .2s}
+.card i{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.3);display:grid;place-items:center;transition:all .2s}
+.card[aria-checked=true]{border-color:var(--gold);background:rgba(212,165,116,.1)}
+.card[aria-checked=true] i{border-color:var(--gold2);background:radial-gradient(circle,var(--gold2) 45%,transparent 50%)}
+.scale{margin-top:18px}
+.scale input{width:100%;accent-color:var(--gold)}
+.scale .ends{display:flex;justify-content:space-between;font-size:.84rem;color:var(--muted);margin-top:8px;font-weight:600}
+.scale .val{text-align:center;font-family:var(--serif);font-size:1.4rem;color:var(--gold2);margin-top:4px}
+.err{display:none;color:var(--err);font-size:.84rem;font-weight:700;margin-top:10px}
+.q.bad .err{display:block}
+
+/* navegación */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,transparent,rgba(10,10,15,.92) 30%);}
+.nav .wrap{display:flex;gap:10px;justify-content:space-between;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 24px;border-radius:999px;font-weight:800;font-size:1rem;transition:transform .2s,box-shadow .2s,opacity .2s}
+.btn:active{transform:scale(.97)}
+.btn-gold{flex:1;max-width:340px;margin-left:auto;background:linear-gradient(135deg,var(--gold3),var(--gold) 60%,#b8875a);color:#1d1408;box-shadow:0 14px 30px -12px rgba(212,165,116,.8),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn-ghost{border:1px solid rgba(255,255,255,.16);color:var(--ink)}
+.btn[disabled]{opacity:.5;pointer-events:none}
+.saved{font-size:.78rem;color:var(--muted);font-weight:600;opacity:0;transition:opacity .4s}
+.saved.on{opacity:1}
+
+/* gracias */
+.done{text-align:center;padding-top:30px}
+.check{width:120px;height:120px;margin:0 auto;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff3cf,#e6c27a 35%,#a8813f 75%);box-shadow:0 0 0 12px rgba(212,165,116,.12),0 30px 60px -20px rgba(212,165,116,.7)}
+.check svg{width:56px;height:56px;stroke:#2a1d08;stroke-width:3;fill:none;stroke-dasharray:60;stroke-dashoffset:60;animation:draw .8s .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.done .lead{margin-left:auto;margin-right:auto}
+.demo{display:none;margin-top:20px;padding:12px 16px;border-radius:12px;border:1px dashed var(--line2);color:var(--muted);font-size:.86rem}
+.demo.on{display:inline-block}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:30px 0 10px}
+@media (max-width:520px){.facts{grid-template-columns:1fr}.btn{padding:0 18px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="https://bether-studio.com" target="_blank" rel="noopener">
+      <svg viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d4a574"/><stop offset="1" stop-color="#f1d8a8"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="#0a0a0f" stroke="rgba(230,192,138,.3)"/><path d="M32 6 54 19v26L32 58 10 45V19Z" fill="none" stroke="url(#g)" stroke-width="2.6" stroke-linejoin="round"/><text x="32" y="40.5" text-anchor="middle" font-family="Georgia,serif" font-size="21" font-weight="700" fill="url(#g)">BH</text></svg>
+      <b>Bether Studio</b>
+    </a>
+    <span class="step-of" id="stepOf"></span>
+  </div>
+  <div class="progress"><i id="bar"></i></div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<div class="nav" id="nav" hidden>
+  <div class="wrap">
+    <button class="btn btn-ghost" id="prev" type="button">← Atrás</button>
+    <span class="saved" id="saved">Guardado ✓</span>
+    <button class="btn btn-gold" id="next" type="button">Siguiente →</button>
+  </div>
+</div>
+
+<script>
+/* ─────────────────────────────────────────────────────────────
+   CONFIGURACIÓN
+   api: URL del Apps Script de Google (ver apps-script.gs).
+        Vacía = modo prueba (no se envía nada).
+   ───────────────────────────────────────────────────────────── */
+const CONFIG = {
+  cliente: 'Estudio Jurídico Dra. Andrea G. de Casissa',
+  api: ''
+};
+
+/* Preguntas. type: text | long | email | tel | chips | radio | scale */
+const STEPS = [
+  { title: 'El <em>estudio</em>', intro: 'Empecemos por lo básico: quiénes son y cómo trabajan.', qs: [
+    { id: 'nombre', label: '¿Cómo quieren que figure el nombre del estudio?', type: 'text', ph: 'Ej.: Estudio Jurídico Dra. Andrea G. de Casissa', req: true },
+    { id: 'equipo', label: '¿Quiénes forman el estudio?', help: 'Nombres y rol de cada profesional (y si hay secretaria o colaboradores).', type: 'long' },
+    { id: 'trayectoria', label: '¿Desde qué año ejercen y qué de su trayectoria les gustaría destacar?', help: 'Formación, especializaciones, años en la zona, casos que los enorgullecen (sin datos de clientes).', type: 'long' },
+    { id: 'historia', label: '¿Cómo y por qué nació el estudio?', help: 'Con esto escribimos el "Quiénes somos". Contalo como se lo contarías a alguien en persona.', type: 'long' },
+    { id: 'zona', label: '¿En qué zonas o localidades atienden?', type: 'text', ph: 'Ej.: Claypole, Burzaco, Adrogué y alrededores' },
+    { id: 'modalidad', label: '¿Cómo atienden?', type: 'chips', opts: ['Presencial en el estudio', 'Videollamada', 'Visitas a domicilio', 'Consultas por WhatsApp', 'Causas en otras jurisdicciones'] },
+    { id: 'horarios', label: 'Días y horarios de atención', type: 'text', ph: 'Ej.: Lunes a viernes de 9 a 18 hs' }
+  ]},
+  { title: 'Lo que <em>hacen</em>', intro: 'Queremos entender bien sus servicios para comunicarlos con claridad.', qs: [
+    { id: 'areas', label: '¿En qué áreas trabajan?', help: 'Marcá todas las que correspondan.', type: 'chips', opts: ['Laboral', 'Familia', 'Penal', 'Accidentes de tránsito', 'Sucesiones', 'Previsional / jubilaciones', 'Civil y contratos', 'Daños y perjuicios', 'Comercial / empresas', 'Otra'] },
+    { id: 'foco', label: '¿Qué área quieren potenciar en los próximos meses?', help: 'La que más les interesa que crezca. Le vamos a dar más protagonismo.', type: 'text' },
+    { id: 'casos', label: '¿Cuáles son las 3 consultas o casos más frecuentes?', type: 'long', ph: '1.\n2.\n3.' },
+    { id: 'no_toman', label: '¿Hay casos que no toman o prefieren no recibir?', help: 'Así evitamos atraer consultas que no les sirven.', type: 'long' },
+    { id: 'plus', label: '¿Ofrecen algo que los diferencie?', help: 'Ej.: atención urgente, seguimiento del caso por WhatsApp, primera orientación rápida, horarios extendidos.', type: 'long' }
+  ]},
+  { title: 'Sus <em>clientes</em>', intro: 'Cuanto mejor conozcamos a quién le hablan, mejor vamos a llegar.', qs: [
+    { id: 'publico', label: '¿Quiénes son sus clientes habituales?', type: 'chips', opts: ['Trabajadores', 'Familias', 'Personas mayores', 'Jóvenes', 'Comerciantes / emprendedores', 'Empresas', 'Víctimas de accidentes', 'Otro'] },
+    { id: 'llegan', label: '¿Cómo llegan hoy los clientes al estudio?', type: 'chips', opts: ['Boca en boca', 'Recomendación de otros clientes', 'Redes sociales', 'Google', 'Volantes o carteles', 'Otro'] },
+    { id: 'preguntas', label: '¿Qué preguntas les hacen siempre en la primera consulta?', help: 'Son oro: las convertimos en publicaciones y en las preguntas frecuentes de la web.', type: 'long' },
+    { id: 'miedos', label: '¿Qué es lo que más le preocupa a la gente cuando llega?', help: 'Ej.: "que sea caro", "que tarde años", "no tener pruebas".', type: 'long' },
+    { id: 'elegir', label: '¿Por qué alguien debería elegirlos a ustedes y no a otro estudio?', type: 'long' },
+    { id: 'primera', label: '¿Cómo funciona la primera consulta?', type: 'radio', opts: ['Sin cargo', 'Tiene un honorario de consulta', 'Depende del caso', 'Prefiero que no se mencione'] }
+  ]},
+  { title: 'Imagen y <em>estilo</em>', intro: 'Cómo quieren verse y sonar en la web y en las redes.', qs: [
+    { id: 'tono', label: '¿Cómo les gustaría que suene el estudio?', type: 'scale', ends: ['Formal y técnico', 'Cercano y simple'] },
+    { id: 'palabras', label: 'Tres palabras que describan al estudio', type: 'text', ph: 'Ej.: compromiso, claridad, cercanía' },
+    { id: 'fotos', label: '¿La Dra. quiere aparecer en fotos o videos?', help: 'Mostrar a la profesional genera mucha confianza, pero es decisión de ustedes.', type: 'radio', opts: ['Sí, en fotos y videos', 'Solo en fotos', 'Prefiero no aparecer'] },
+    { id: 'identidad', label: 'Sobre la identidad visual', type: 'radio', opts: ['Tenemos logo y colores propios', 'Nos gusta la propuesta negro y dorado', 'Queremos ver otra propuesta'] },
+    { id: 'referencias', label: '¿Hay páginas o cuentas que les gusten?', help: 'De abogados o de cualquier rubro. Pegá links o nombres.', type: 'long' },
+    { id: 'evitar', label: '¿Hay algo que NO quieran que se vea o se diga?', type: 'long' }
+  ]},
+  { title: 'Redes y <em>objetivos</em>', intro: 'Para que cada publicación tenga un propósito.', qs: [
+    { id: 'objetivos', label: '¿Qué es lo más importante para ustedes?', type: 'chips', opts: ['Recibir más consultas', 'Que nos conozcan en la zona', 'Transmitir profesionalismo', 'Informar y educar', 'Posicionar un área específica'] },
+    { id: 'temas', label: '¿Qué temas les gustaría que tratemos en las publicaciones?', help: 'Novedades legales, derechos que la gente no conoce, mitos, consejos…', type: 'long' },
+    { id: 'aprueba', label: '¿Quién aprueba las publicaciones antes de salir?', type: 'text', ph: 'Nombre y por dónde se lo enviamos (WhatsApp, mail…)' },
+    { id: 'mensajes', label: '¿Quién responde los mensajes que lleguen por redes?', type: 'radio', opts: ['El estudio directamente', 'Bether Studio responde y deriva al WhatsApp del estudio', 'Entre los dos'] },
+    { id: 'metas', label: '¿Qué les gustaría lograr en los próximos 6 meses?', type: 'long' }
+  ]},
+  { title: 'Datos de <em>contacto</em>', intro: 'Último paso: los datos que van a aparecer en la web y en las redes.', qs: [
+    { id: 'contacto', label: 'Nombre de quien completa el formulario', type: 'text', req: true },
+    { id: 'whatsapp', label: 'WhatsApp para consultas', type: 'tel', ph: 'Ej.: 11 6638-2751', req: true },
+    { id: 'email', label: 'Mail del estudio', help: 'Lo usamos para crear y asociar las cuentas a nombre del estudio.', type: 'email', ph: 'estudio@ejemplo.com' },
+    { id: 'direccion', label: 'Dirección del estudio', type: 'text', ph: 'Calle, número, localidad' },
+    { id: 'redes_actuales', label: '¿Tienen alguna red o perfil de Google ya creado?', type: 'text', ph: 'Links o nombres de usuario' },
+    { id: 'extra', label: '¿Algo más que quieran contarnos?', type: 'long' }
+  ]}
+];
+
+/* ───────────────────────── lógica ───────────────────────── */
+const $ = s => document.querySelector(s);
+const app = $('#app'), nav = $('#nav'), bar = $('#bar'), stepOf = $('#stepOf');
+const KEY = 'brief:' + CONFIG.cliente;
+let ans = {}; try { ans = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+let cur = -1;
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(ans)); const s = $('#saved'); s.classList.add('on'); clearTimeout(save.t); save.t = setTimeout(() => s.classList.remove('on'), 1200); } catch (e) {} };
+const esc = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+function field(q) {
+  const v = ans[q.id];
+  const head = `<span class="t">${q.label}${q.req ? '' : '<span class="opt">(opcional)</span>'}</span>${q.help ? `<span class="help">${q.help}</span>` : ''}`;
+  let body = '';
+  if (q.type === 'long') body = `<textarea id="f-${q.id}" data-id="${q.id}" placeholder="${esc(q.ph || 'Escribí acá…')}">${esc(v)}</textarea>`;
+  else if (['text', 'email', 'tel'].includes(q.type)) body = `<input id="f-${q.id}" data-id="${q.id}" type="${q.type}" value="${esc(v)}" placeholder="${esc(q.ph || '')}" ${q.type === 'tel' ? 'inputmode="tel"' : ''} autocomplete="off">`;
+  else if (q.type === 'chips') body = `<div class="chips" role="group">${q.opts.map(o => `<button type="button" class="chip" data-id="${q.id}" data-v="${esc(o)}" aria-pressed="${(v || []).includes(o)}">${o}</button>`).join('')}</div>`;
+  else if (q.type === 'radio') body = `<div class="cards" role="radiogroup">${q.opts.map(o => `<button type="button" class="card" role="radio" data-id="${q.id}" data-v="${esc(o)}" aria-checked="${v === o}"><i></i>${o}</button>`).join('')}</div>`;
+  else if (q.type === 'scale') { const n = v || 3; body = `<div class="scale"><input type="range" min="1" max="5" step="1" value="${n}" data-id="${q.id}"><div class="val" id="sv-${q.id}">${['', 'Muy formal', 'Más bien formal', 'Equilibrado', 'Más bien cercano', 'Muy cercano'][n]}</div><div class="ends"><span>${q.ends[0]}</span><span>${q.ends[1]}</span></div></div>`; }
+  return `<div class="q" id="q-${q.id}">${['long', 'text', 'email', 'tel'].includes(q.type) ? `<label class="t" for="f-${q.id}" style="display:contents">${head}</label>` : head}${body}<span class="err">Este dato es necesario para continuar.</span></div>`;
+}
+
+function render() {
+  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+  const total = STEPS.length;
+  if (cur === -1) {
+    nav.hidden = true; stepOf.textContent = ''; bar.style.width = '0%';
+    app.innerHTML = `<section class="screen on">
+      <span class="eyebrow">Brief de proyecto</span>
+      <h1>Contanos sobre <em class="gold">tu estudio</em></h1>
+      <p class="lead">Estas preguntas nos ayudan a que la web y las redes reflejen de verdad quiénes son, qué hacen y a quién quieren llegar. No hay respuestas correctas: cuanto más nos cuenten, mejor.</p>
+      <div class="hero-card">
+        <span class="for">Preparado para</span>
+        <span class="who gold">${esc(CONFIG.cliente)}</span>
+        <div class="facts"><div><b>~10 minutos</b>para completarlo</div><div><b>Se guarda solo</b>podés seguir después</div><div><b>Solo lo obligatorio</b>el resto es opcional</div></div>
+      </div>
+      <ol class="sections">${STEPS.map(s => `<li>${s.title.replace(/<\/?em>/g, '')}</li>`).join('')}</ol>
+      <div style="margin-top:30px"><button class="btn btn-gold" style="width:100%;max-width:none" id="start" type="button">Empezar →</button></div>
+    </section>`;
+    $('#start').onclick = () => { cur = 0; render(); };
+    return;
+  }
+  if (cur === total) return;
+  const s = STEPS[cur];
+  nav.hidden = false;
+  stepOf.textContent = `Paso ${cur + 1} de ${total}`;
+  bar.style.width = ((cur + 1) / (total + 1) * 100) + '%';
+  $('#next').innerHTML = cur === total - 1 ? 'Enviar respuestas ✓' : 'Siguiente →';
+  app.innerHTML = `<section class="screen on"><span class="eyebrow">Paso ${cur + 1} · ${s.title.replace(/<\/?em>/g, '')}</span><h2>${s.title}</h2><p class="lead">${s.intro}</p>${s.qs.map(field).join('')}</section>`;
+}
+
+app.addEventListener('input', e => {
+  const id = e.target.dataset.id; if (!id) return;
+  ans[id] = e.target.type === 'range' ? +e.target.value : e.target.value;
+  if (e.target.type === 'range') $('#sv-' + id).textContent = ['', 'Muy formal', 'Más bien formal', 'Equilibrado', 'Más bien cercano', 'Muy cercano'][e.target.value];
+  e.target.closest('.q').classList.remove('bad'); save();
+});
+app.addEventListener('click', e => {
+  const b = e.target.closest('.chip,.card'); if (!b) return;
+  const id = b.dataset.id, v = b.dataset.v;
+  if (b.classList.contains('chip')) { const a = new Set(ans[id] || []); a.has(v) ? a.delete(v) : a.add(v); ans[id] = [...a]; b.setAttribute('aria-pressed', a.has(v)); }
+  else { ans[id] = v; b.parentNode.querySelectorAll('.card').forEach(c => c.setAttribute('aria-checked', c === b)); }
+  save();
+});
+
+function valid() {
+  let ok = true, first;
+  STEPS[cur].qs.forEach(q => {
+    const v = ans[q.id], empty = v == null || (Array.isArray(v) ? !v.length : !String(v).trim());
+    let bad = !!(q.req && empty);
+    if (!empty && q.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) bad = true;
+    $('#q-' + q.id).classList.toggle('bad', bad);
+    if (bad) { ok = false; first = first || $('#q-' + q.id); }
+  });
+  if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  return ok;
+}
+
+$('#prev').onclick = () => { cur--; render(); };
+$('#next').onclick = async () => {
+  if (!valid()) return;
+  if (cur < STEPS.length - 1) { cur++; render(); return; }
+  await send();
+};
+
+async function send() {
+  const btn = $('#next'); btn.disabled = true; btn.textContent = 'Enviando…';
+  const filas = [];
+  STEPS.forEach(s => s.qs.forEach(q => {
+    let v = ans[q.id];
+    if (Array.isArray(v)) v = v.join(', ');
+    if (q.type === 'scale') v = v ? `${v}/5 (${['', 'Muy formal', 'Más bien formal', 'Equilibrado', 'Más bien cercano', 'Muy cercano'][v]})` : '';
+    filas.push([q.label, v == null ? '' : String(v)]);
+  }));
+  const data = { cliente: CONFIG.cliente, enviado: new Date().toLocaleString('es-AR'), respuestas: filas };
+  let enviado = false;
+  if (CONFIG.api) {
+    try { await fetch(CONFIG.api, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) }); enviado = true; }
+    catch (e) { btn.disabled = false; btn.innerHTML = 'Reintentar envío ✓'; alert('No pudimos enviar las respuestas. Revisá tu conexión e intentá de nuevo: no se perdió nada.'); return; }
+  }
+  try { localStorage.removeItem(KEY); } catch (e) {}
+  nav.hidden = true; stepOf.textContent = '¡Listo!'; bar.style.width = '100%';
+  app.innerHTML = `<section class="screen on done">
+    <div class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></div>
+    <span class="eyebrow" style="margin-top:28px">Respuestas recibidas</span>
+    <h2>¡Muchas <em class="gold">gracias</em>!</h2>
+    <p class="lead">Ya tenemos todo lo que necesitamos para seguir. Con esta información vamos a ajustar la web y armar el plan de redes. Cualquier cosa que quieras sumar, escribinos.</p>
+    <p class="demo ${enviado ? '' : 'on'}">Modo prueba: falta configurar la conexión, estas respuestas no se enviaron.</p>
+  </section>`;
+}
+
+render();
+</script>
+<footer>Bether Studio · Webs y redes para negocios</footer>
+</body>
+</html>
